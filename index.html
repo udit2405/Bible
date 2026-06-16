@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Placement Bible — Everything You Need Before Your Placement Interview</title>
+<style>
+:root{
+  --navy-900:#0b1f3a;--navy-grad:linear-gradient(160deg,#0b1f3a 0%,#143b6e 55%,#1e4d8c 100%);
+  --blue-600:#2563eb;--blue-500:#3b82f6;--blue-400:#60a5fa;--blue-50:#eff6ff;
+  --bg:#f5f8fc;--surface:#fff;--surface-2:#f8fafc;--border:#e4eaf2;--text:#0f2440;--muted:#5a6b85;--faint:#8a99b3;
+  --green:#16a34a;--green-bg:#e8f7ee;--amber:#d97706;--amber-bg:#fef3e2;--red:#dc2626;--red-bg:#fdecec;
+  --radius:16px;--shadow-sm:0 1px 2px rgba(15,36,64,.06);--shadow:0 8px 24px rgba(15,36,64,.08);
+  --shadow-lg:0 20px 50px rgba(11,31,58,.18);--maxw:1180px;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:12px;padding:12px 22px;font-weight:600;font-size:15px;transition:transform .12s,box-shadow .2s,background .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--blue-600);color:#fff;box-shadow:0 8px 20px rgba(37,99,235,.28)}.btn-primary:hover{background:#1d4ed8}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}.btn-ghost:hover{background:var(--surface-2)}
+.btn-light{background:#fff;color:var(--navy-900)}.btn-sm{padding:8px 14px;font-size:13.5px;border-radius:10px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.card-pad{padding:26px}.card-hover{transition:transform .18s,box-shadow .18s,border-color .18s}
+.card-hover:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cfdcf0}
+.section{margin-bottom:40px;scroll-margin-top:90px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.section-num{width:30px;height:30px;flex:none;border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:700;background:var(--blue-50);color:var(--blue-600)}
+.section-title{font-size:22px;font-weight:700}.section-sub{color:var(--muted);font-size:14.5px;margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:600;background:var(--blue-50);color:var(--blue-600)}
+.pill-soft{background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.tag{display:inline-block;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:500;background:var(--surface-2);color:var(--text);border:1px solid var(--border);margin:0 8px 8px 0}
+.grid{display:grid;gap:18px}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.kpi{padding:20px}.kpi-label{font-size:12.5px;color:var(--faint);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.kpi-value{font-size:26px;font-weight:800;margin-top:6px;color:var(--navy-900);letter-spacing:-.03em}.kpi-foot{font-size:13px;color:var(--muted);margin-top:4px}
+.progress{height:10px;border-radius:999px;background:#e9eef6;overflow:hidden}.progress>span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue-500),var(--blue-600));transition:width .5s}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--navy-900)}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--navy-grad);display:grid;place-items:center;color:#fff;font-weight:800}
+.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{color:var(--muted);font-weight:600;font-size:14.5px;cursor:pointer}.nav-links a:hover{color:var(--navy-900)}
+@media(max-width:720px){.nav-links .hide-sm{display:none}}
+.search{display:flex;align-items:center;gap:10px;width:100%;background:#fff;border:1px solid var(--border);border-radius:16px;padding:8px 8px 8px 18px;box-shadow:var(--shadow-lg)}
+.search input{flex:1;border:none;outline:none;font-size:17px;color:var(--text);background:transparent;padding:12px 0}.search input::placeholder{color:var(--faint)}
+@media(max-width:620px){.search{flex-direction:column;padding:12px;align-items:stretch}.search .btn{width:100%}}
+.hero{background:var(--navy-grad);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(800px 380px at 80% -10%,rgba(96,165,250,.35),transparent 60%);pointer-events:none}
+.hero-inner{position:relative;padding:86px 24px 78px;text-align:center}
+.hero h1{font-size:52px;font-weight:800;max-width:880px;margin:0 auto;letter-spacing:-.03em}
+.hero p.sub{color:#c6d6f0;font-size:18px;max-width:760px;margin:20px auto 34px}
+.hero .search-wrap{max-width:720px;margin:0 auto}
+.hero .examples{margin-top:18px;color:#9fb4d6;font-size:13.5px}.hero .examples b{color:#fff;font-weight:600;cursor:pointer}.hero .examples b:hover{text-decoration:underline}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:50px;flex-wrap:wrap}.hero-stat .n{font-size:30px;font-weight:800}.hero-stat .l{color:#9fb4d6;font-size:13.5px}
+@media(max-width:720px){.hero h1{font-size:34px}.hero p.sub{font-size:16px}}
+.feature-ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px}
+.feature h3{font-size:17px;margin-bottom:6px}.feature p{color:var(--muted);font-size:14px}
+.dash-hero{background:var(--navy-grad);color:#fff}.dash-hero-inner{padding:34px 24px 30px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.logo-badge{width:76px;height:76px;border-radius:18px;background:#fff;display:grid;place-items:center;font-size:30px;font-weight:800;flex:none;box-shadow:var(--shadow)}
+.dash-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;color:#c6d6f0;font-size:14px}
+.dash-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:start;padding:30px 0 80px}
+.dash-nav{position:sticky;top:82px}.dash-nav a{display:block;padding:9px 12px;border-radius:9px;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer}
+.dash-nav a:hover{background:var(--surface-2);color:var(--navy-900)}.dash-nav a.active{background:var(--blue-50);color:var(--blue-600)}
+@media(max-width:960px){.dash-layout{grid-template-columns:1fr}.dash-nav{display:none}}
+.checklist{list-style:none;padding:0;margin:0}
+.check-item{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--border);border-radius:12px;margin-bottom:10px;cursor:pointer;transition:background .15s,border-color .15s}
+.check-item:hover{background:var(--surface-2)}.check-item.done{background:var(--green-bg);border-color:#bfe6cd}
+.check-box{width:22px;height:22px;border-radius:7px;border:2px solid #c5d0e0;flex:none;display:grid;place-items:center;color:#fff;font-size:13px}
+.check-item.done .check-box{background:var(--green);border-color:var(--green)}.check-item.done .check-label{text-decoration:line-through;color:var(--muted)}
+.kv{display:flex;flex-direction:column;gap:14px}.kv-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed var(--border)}
+.kv-row:last-child{border-bottom:none}.kv-key{color:var(--muted);font-size:14px}.kv-val{font-weight:600;text-align:right}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:760px){.swot{grid-template-columns:1fr}}
+.swot-box{border-radius:14px;padding:20px;border:1px solid var(--border)}.swot-box h4{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.swot-box ul{margin:0;padding-left:18px;font-size:14px}.swot-box li{margin-bottom:7px}
+.swot-s{background:var(--green-bg);border-color:#c7ebd5}.swot-w{background:var(--red-bg);border-color:#f6cccc}.swot-o{background:var(--blue-50);border-color:#cfe0fb}.swot-t{background:var(--amber-bg);border-color:#f7ddb4}
+.acc-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff}
+.acc-head{display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer}
+.acc-step{width:30px;height:30px;flex:none;border-radius:9px;background:var(--navy-900);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.acc-title{font-weight:700;font-size:15.5px}.acc-chev{margin-left:auto;color:var(--faint);transition:transform .2s}.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-body{padding:0 18px 18px 62px}.acc-body h5{margin:14px 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--faint)}
+.acc-body ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}.acc-body li{margin-bottom:5px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:600;font-size:14px;color:var(--muted)}
+.tab.active{background:var(--navy-900);color:#fff;border-color:var(--navy-900)}
+.qa{border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px}.qa b{font-weight:600}.qa b::before{content:"Q. ";color:var(--blue-600)}
+.coach{display:flex;flex-direction:column;height:460px}.coach-log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:80%;padding:12px 15px;border-radius:14px;font-size:14.5px;white-space:pre-line}
+.msg.bot{background:var(--surface-2);border:1px solid var(--border);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--blue-600);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.coach-suggest{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 12px}
+.chip{padding:7px 13px;border-radius:999px;border:1px solid var(--border);background:#fff;font-size:13px;font-weight:600;color:var(--blue-600)}.chip:hover{background:var(--blue-50)}
+.coach-input{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--border)}
+.coach-input input{flex:1;border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14.5px;outline:none}.coach-input input:focus{border-color:var(--blue-400)}
+.comp-card h4{font-size:16px;margin-bottom:4px}.comp-pos{font-size:12.5px;font-weight:700;color:var(--blue-600);margin-bottom:10px}
+.footer{background:var(--navy-900);color:#aebfda;padding:50px 0 30px;margin-top:40px}
+.footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}.footer h5{color:#fff;font-size:14px;margin-bottom:12px}
+.footer a{display:block;color:#aebfda;font-size:13.5px;padding:4px 0;cursor:pointer}.footer a:hover{color:#fff}
+.footer .bottom{border-top:1px solid #1d3358;margin-top:34px;padding-top:20px;font-size:13px;color:#7e93b8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:760px){.footer .cols{grid-template-columns:1fr 1fr}}
+.admin-tabs{display:flex;gap:6px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
+.admin-tab{padding:12px 16px;font-weight:600;font-size:14.5px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-top:none;border-left:none;border-right:none}
+.admin-tab.active{color:var(--blue-600);border-bottom-color:var(--blue-600)}
+.field{margin-bottom:16px}.field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--border);border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:inherit;outline:none;background:#fff}
+.field input:focus,.field textarea:focus{border-color:var(--blue-400)}
+.table{width:100%;border-collapse:collapse}.table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);padding:10px 12px;border-bottom:1px solid var(--border)}
+.table td{padding:12px;border-bottom:1px solid var(--border);font-size:14px}.table tr:hover td{background:var(--surface-2)}
+.muted{color:var(--muted)}.center{text-align:center}.eyebrow{color:var(--blue-600);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.flex{display:flex}.between{justify-content:space-between}.items-center{align-items:center}.gap-8{gap:8px}.gap-12{gap:12px}.wrap{flex-wrap:wrap}
+.mb-16{margin-bottom:16px}.mb-24{margin-bottom:24px}.mt-16{margin-top:16px}
+.fade-in{animation:fade .4s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ring-wrap{display:grid;place-items:center;position:relative}
+.suggest-box{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:40;padding:6px;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-lg);text-align:left}
+.suggest-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:transparent;border:none;padding:10px 12px;border-radius:10px;cursor:pointer}
+.suggest-row:hover{background:var(--surface-2)}
+.logo-sq{border-radius:9px;color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+/* =========================================================================
+   PLACEMENT BIBLE — single-file build (vanilla JS, hash routing, localStorage)
+   ========================================================================= */
+
+/* ---------------- Archetypes ---------------- */
+var CHECKLIST = ['Researched the company','Reviewed the business model','Studied the competitors','Practiced interview questions','Prepared a strong self-introduction','Completed a mock interview'];
+
+var archetypes = {
+  it_services:{label:'IT Services',
+    roles:['Systems Engineer / Associate Software Engineer','Digital Specialist Engineer','Cloud / Infrastructure Engineer','Business / Process Analyst'],
+    eligibility:'60% (or 6.0 CGPA) and above throughout 10th, 12th and graduation. No active backlogs. Gap of not more than 1 year in education.',
+    salaryRange:'₹3.5 – 9 LPA (higher for specialist/digital roles)',
+    skills:['DSA basics','OOP & DBMS','SQL','One programming language (Java/Python/C++)','Aptitude & logical reasoning','Communication'],
+    hiringTimeline:'Off-campus & pool campus drives run year-round; major on-campus hiring Aug–Dec. Offer to onboarding: 2–5 months.',
+    interview:[
+      {stage:'Aptitude Round',desc:'Online assessment covering quantitative aptitude, logical reasoning, verbal ability, and often a basic coding/pseudo-code section.',tips:['Practice quant from R.S. Aggarwal / PrepInsta','Time management — accuracy over speed','Revise pseudo-code and output-prediction questions'],questions:['Time, speed & distance problem','Series completion / coding-decoding','Predict the output of this C/Java snippet','Reading-comprehension based verbal set']},
+      {stage:'Technical Round',desc:'Interviewer probes core CS fundamentals, your resume projects, and a programming language of your choice.',tips:['Be ready to explain every line on your resume','Revise DBMS, OOP, OS and networking basics','Practice writing clean code on paper'],questions:['Explain OOP pillars with examples','Difference between primary key and unique key','Write a program to reverse a string / find duplicates','Walk me through your final-year project']},
+      {stage:'HR Round',desc:'Assesses communication, cultural fit, relocation flexibility, and willingness to sign the service agreement/bond.',tips:['Know the company values and recent news','Be honest about relocation and shift flexibility','Prepare a crisp “Tell me about yourself”'],questions:['Tell me about yourself','Why do you want to join us?','Are you comfortable relocating anywhere in India?','Where do you see yourself in 5 years?']}
+    ],
+    faqs:{hr:['Tell me about yourself.','Why do you want to join an IT services company?','Are you okay with relocation and rotational shifts?','How do you handle pressure and deadlines?','What do you know about our company?'],
+      technical:['Explain the 4 pillars of OOP.','What is normalization in DBMS?','Difference between stack and queue.','Write SQL to find the second-highest salary.','What happens when you type a URL and press enter?'],
+      case:['How would you migrate a legacy app to the cloud?','A client reports a slow application — how do you debug it?'],
+      behavioral:['Describe a time you worked in a team under a tight deadline.','Tell me about a conflict and how you resolved it.','A time you learned a new skill quickly.']}},
+  product_tech:{label:'Product / Big Tech',
+    roles:['Software Development Engineer (SDE-1)','Data Scientist / ML Engineer','Product Manager (APM)','Business / Data Analyst'],
+    eligibility:'Typically 7.0+ CGPA, strong DSA/problem-solving. CS or allied branches preferred for SDE; open branches for analyst roles. Internship conversions common.',
+    salaryRange:'₹15 – 50+ LPA total comp (base + RSUs + joining bonus)',
+    skills:['Strong DSA (trees, graphs, DP)','System design basics','One strong language','Problem-solving under time pressure','CS fundamentals (OS, DBMS, OOP)','Behavioral / leadership stories'],
+    hiringTimeline:'On-campus Aug–Oct for finals; summer internship hiring Jul–Sep for pre-finals. Offer to joining: 6–11 months.',
+    interview:[
+      {stage:'Online Assessment',desc:'Timed coding test on a platform (HackerRank/Codility) with 2–3 DSA problems and sometimes MCQs on CS fundamentals.',tips:['Solve 150–250 LeetCode problems (easy→medium→hard)','Master arrays, strings, trees, graphs, DP','Dry-run edge cases before submitting'],questions:['Two-pointer / sliding-window array problem','Tree traversal / lowest common ancestor','Dynamic programming (knapsack/LIS variant)','MCQs on time complexity & OS']},
+      {stage:'Technical Round (DSA)',desc:'Live coding with an engineer. You explain your approach, optimise complexity, and write working code.',tips:['Think out loud — communication is scored','State brute force, then optimise','Discuss time & space complexity explicitly'],questions:['Design an LRU cache','Detect a cycle in a linked list','Number of islands (BFS/DFS)','Find median of two sorted arrays']},
+      {stage:'System / Design Round',desc:'For some roles: high-level design or low-level design (machine-coding) to test scalability and OOP modelling.',tips:['Learn fundamentals: load balancing, caching, sharding, queues','Clarify requirements before designing','Discuss trade-offs, not just one answer'],questions:['Design a URL shortener','Design a rate limiter','Low-level design of a parking lot','How would you scale a notification system?']},
+      {stage:'Behavioral / Bar-Raiser Round',desc:'Values and leadership-principles based. Uses your past experiences to predict how you work.',tips:['Prepare 6–8 STAR stories (Situation-Task-Action-Result)','Map stories to the company’s leadership principles','Show ownership, data-driven decisions, and impact'],questions:['Tell me about a time you disagreed with a teammate.','Describe your most challenging project.','A time you took ownership beyond your role.','How do you prioritise when everything is urgent?']}
+    ],
+    faqs:{hr:['Walk me through your resume.','Why this company over its competitors?','What are your salary expectations?','Tell me about a time you failed and what you learned.'],
+      technical:['How does a hash map work internally?','Explain process vs thread.','Design a system to handle 1M requests/sec.','What is database indexing and when does it hurt?','Reverse a linked list in O(n).'],
+      case:['Estimate the number of delivery vans needed in Bengaluru.','How would you reduce checkout abandonment on our app?'],
+      behavioral:['Tell me about a time you showed ownership.','Describe a conflict with a stakeholder.','A decision you made with incomplete data.','A time you had to learn something fast.']}},
+  consulting:{label:'Consulting',
+    roles:['Business Analyst / Associate Analyst','Consultant (Strategy / Technology / Risk)','Advisory / Audit Associate','Data & AI Consultant'],
+    eligibility:'Strong academics (usually 65%+ / 7.0+ CGPA), no backlogs, excellent communication and structured-thinking ability. Open to most disciplines.',
+    salaryRange:'₹7 – 16 LPA (strategy roles higher; tech/advisory mid-range)',
+    skills:['Structured problem-solving','Case-interview frameworks','Business acumen','Guesstimates & mental math','Communication & storytelling','Excel / PowerPoint'],
+    hiringTimeline:'On-campus placements Aug–Nov; lateral/off-campus hiring year-round. Offer to joining: 3–6 months.',
+    interview:[
+      {stage:'Aptitude Round',desc:'Online test on quantitative aptitude, data interpretation, logical reasoning, and verbal ability.',tips:['Practice data-interpretation sets','Brush up percentages, ratios, profit & loss','Work on reading speed for verbal'],questions:['Data interpretation on a sales table','Logical puzzle / seating arrangement','Profit & loss / ratio problem','Critical-reasoning verbal set']},
+      {stage:'Case Interview',desc:'The core round. You crack a business problem live — market entry, profitability, or a guesstimate — showing structured thinking.',tips:['Learn frameworks: profitability, 4P, market entry, guesstimates','Structure first, then dive in — say your approach aloud','Always summarise with a recommendation'],questions:['Our client’s profits are falling — diagnose why.','Should an Indian D2C brand enter tier-2 cities?','Estimate the market size for electric scooters in India.','How would you improve a bank’s customer retention?']},
+      {stage:'Group Discussion',desc:'Tests communication, teamwork and clarity of thought in a moderated group on a business or abstract topic.',tips:['Initiate or summarise to stand out — quality over quantity','Back points with logic/data, not volume','Let others speak; build on their points'],questions:['Is remote work good for the Indian economy?','AI will create more jobs than it destroys — discuss.','Should India prioritise growth or sustainability?']},
+      {stage:'HR / Fit Round',desc:'Partner/manager round on motivation, culture fit, and your story. Tests why-consulting and why-this-firm.',tips:['Have a sharp “why consulting” and “why this firm”','Know the firm’s service lines and recent work','Show curiosity and a learning mindset'],questions:['Why consulting and why our firm?','Tell me about a leadership experience.','A time you influenced without authority.','What would you do if you disagreed with a client?']}
+    ],
+    faqs:{hr:['Why consulting?','Why our firm specifically?','Tell me about yourself.','Describe a leadership role you’ve held.','How do you handle ambiguity?'],
+      technical:['Walk me through how you’d read a P&L statement.','What business metrics would you track for a SaaS company?','Explain a recent business news story and its impact.'],
+      case:['Profitability case: revenues flat, costs rising — diagnose.','Market-entry case for a new geography.','Guesstimate: number of EVs sold in India next year.','M&A: should our client acquire competitor X?'],
+      behavioral:['A time you led a team to a result.','A time you persuaded a sceptical stakeholder.','How you handled a high-pressure deadline.']}},
+  fmcg:{label:'FMCG',
+    roles:['Management Trainee (Sales / Marketing)','Supply Chain / Operations Trainee','Finance / HR Management Trainee','R&D / Quality Associate'],
+    eligibility:'Consistent academics, strong communication, leadership exposure (PORs, internships). Often MBA/PGDM for management-trainee tracks; engineering for supply-chain/R&D.',
+    salaryRange:'₹8 – 25 LPA (flagship management-trainee programmes at the top end)',
+    skills:['Business & consumer understanding','Structured problem-solving','Leadership & influence','Guesstimates','Communication & presence','Ownership / bias for action'],
+    hiringTimeline:'Flagship leadership programmes recruit on-campus Sep–Dec. Long, multi-stage process. Offer to joining: 4–8 months.',
+    interview:[
+      {stage:'Aptitude / Online Round',desc:'Psychometric + aptitude assessment, sometimes a gamified test measuring traits and reasoning.',tips:['Answer psychometric questions honestly and consistently','Practice basic quant and data interpretation','Stay calm in gamified/timed formats'],questions:['Situational-judgement scenarios','Numerical & logical reasoning sets','Personality/trait consistency items']},
+      {stage:'Group Discussion',desc:'Case-based or topical GD assessing collaboration, business sense and communication.',tips:['Drive the structure; assign and summarise','Use consumer/business logic','Be assertive but inclusive'],questions:['How would you grow sales of a biscuit brand in rural India?','Should the brand go premium or stay mass-market?','Discuss: quick-commerce is reshaping FMCG.']},
+      {stage:'Case / Business Round',desc:'A real go-to-market or distribution problem to test commercial thinking and structure.',tips:['Use frameworks: 4P, distribution funnel, guesstimates','Think like a brand/sales manager','Quantify your recommendation'],questions:['Launch strategy for a new ₹10 shampoo sachet.','Estimate the annual market for instant noodles in India.','How to expand distribution to 1 lakh new outlets?']},
+      {stage:'HR / Leadership Round',desc:'Senior-manager round on leadership, values, and long-term fit with the leadership programme.',tips:['Prepare strong leadership/POR stories (STAR)','Show passion for brands and consumers','Demonstrate ownership and resilience'],questions:['Tell me about a time you led a team.','Why FMCG and why our brand?','A time you drove change against resistance.','Which of our products do you love and why?']}
+    ],
+    faqs:{hr:['Why FMCG / why our company?','Tell me about your leadership experiences.','Which of our brands would you improve and how?','How do you handle failure?','Are you open to field/sales roles in small towns?'],
+      technical:['What is the difference between primary and secondary sales?','Explain the marketing funnel.','How would you measure a campaign’s ROI?','What is route-to-market in distribution?'],
+      case:['Go-to-market for a new product launch.','Market-size guesstimate for a category.','Fixing a declining brand’s market share.'],
+      behavioral:['A time you led and delivered results.','A time you influenced senior stakeholders.','How you handled a setback in a project.']}},
+  generic:{label:'General',
+    roles:['Graduate Trainee / Associate','Analyst','Engineer','Operations / Support'],
+    eligibility:'Consistent academics (usually 60%+), good communication, and relevant skills for the role. Check the official careers page for exact criteria.',
+    salaryRange:'₹4 – 12 LPA (varies widely by role and location)',
+    skills:['Communication','Aptitude & reasoning','Role-specific technical skills','Problem-solving','Teamwork'],
+    hiringTimeline:'On-campus placements typically Aug–Dec; off-campus year-round. Offer to joining: 2–6 months.',
+    interview:[
+      {stage:'Aptitude Round',desc:'Online assessment on quantitative aptitude, reasoning and verbal ability.',tips:['Practice standard aptitude sets','Focus on accuracy and time management','Revise basic English/verbal'],questions:['Quantitative aptitude problems','Logical reasoning puzzles','Verbal-ability / comprehension set']},
+      {stage:'Technical / Role Round',desc:'Role-specific questions on your domain skills and resume.',tips:['Know your resume thoroughly','Revise core concepts of your field','Prepare examples of past work'],questions:['Explain a project you worked on.','Core concepts of your domain.','A problem relevant to the role.']},
+      {stage:'HR Round',desc:'Communication, motivation and cultural-fit assessment.',tips:['Prepare “tell me about yourself”','Research the company','Be honest about expectations'],questions:['Tell me about yourself.','Why this company?','Your strengths and weaknesses?','Where do you see yourself in 5 years?']}
+    ],
+    faqs:{hr:['Tell me about yourself.','Why do you want to join us?','What are your strengths and weaknesses?','Where do you see yourself in 5 years?'],
+      technical:['Explain a key concept from your field.','Walk me through a project on your resume.','How would you approach a problem in this role?'],
+      case:['A scenario-based problem relevant to the role.'],
+      behavioral:['A time you worked in a team.','A challenge you overcame.','A time you showed leadership.']}}
+};
+
+/* ---------------- Company database (11 seeded) ---------------- */
+var companies = {
+infosys:{slug:'infosys',name:'Infosys',logo:'In',color:'#007cc3',type:'it_services',industry:'IT Services & Consulting',hq:'Bengaluru, India',employees:'~3,17,000',segments:['Financial Services','Retail & CPG','Communication','Energy & Utilities','Manufacturing','Hi-Tech'],presence:'50+ countries',founded:'1981',
+ description:'Infosys is a global leader in next-generation digital services and consulting, helping enterprises navigate their digital transformation. It is India’s second-largest IT services exporter and a bellwether for the sector.',
+ business:{revenueStreams:['IT services & application development','Digital transformation & cloud (Infosys Cobalt)','Consulting & package implementation','BPM (Infosys BPM)','Platforms & products (Finacle, Topaz AI)'],products:['Finacle (core banking)','Infosys Cobalt (cloud)','Topaz (AI)','Infosys Living Labs','Application & infra management'],customers:['Global banks & insurers','Fortune 500 enterprises','Telecom & retail majors','Manufacturing firms'],valueProp:'End-to-end digital transformation at scale, delivered through a globally distributed, cost-efficient talent model.'},
+ salaryRange:'₹3.6 LPA (Systems Engineer) – ₹9+ LPA (Digital Specialist / Power Programmer)',
+ swot:{strengths:['Strong global brand & marquee clients','Robust balance sheet, near-zero debt','Deep digital & cloud capabilities (Cobalt)','Best-in-class training (Mysuru campus)'],weaknesses:['Heavy dependence on US/BFSI clients','Exposure to wage inflation & attrition','Revenue tied to discretionary IT spend','Lower margins than product firms'],opportunities:['Enterprise AI & GenAI adoption','Cloud migration wave','Vendor consolidation deals','Europe & emerging-market expansion'],threats:['Global macro slowdown cutting IT budgets','Intense pricing competition (TCS, Accenture)','Visa/immigration policy changes','Automation reducing headcount-led revenue']},
+ competitors:[{name:'TCS',position:'Market leader (India)',diff:'Larger scale and revenue; deeper BFSI and broader services portfolio.'},{name:'Wipro',position:'Close peer',diff:'Similar services mix; smaller revenue base and consulting-led pivot.'},{name:'Accenture',position:'Global leader',diff:'Higher value consulting + tech; richer per-employee revenue.'},{name:'HCLTech',position:'Strong peer',diff:'Stronger in infrastructure and engineering/R&D services.'}],
+ industryIntel:{overview:'Indian IT services is a ~$250B+ export industry built on a global delivery model, now shifting from headcount-led growth to AI-led productivity and outcome-based deals.',trends:['GenAI moving from pilots to production','Cloud & data modernisation','Vendor consolidation & cost takeout deals','Pricing pressure and slower discretionary spend'],outlook:'Near-term growth is muted on macro caution, but medium-term demand for AI-led transformation and cost optimisation keeps the structural story intact.',kpis:[{label:'Industry size (exports)',value:'~$200B+',foot:'Indian IT-BPM exports'},{label:'Operating margin',value:'20–22%',foot:'Typical for tier-1 IT'},{label:'Attrition',value:'12–14%',foot:'Cooled from peaks'},{label:'Fresher hiring',value:'Selective',foot:'Down vs 2022 boom'}]}},
+tcs:{slug:'tcs',name:'Tata Consultancy Services',logo:'TC',color:'#e31937',type:'it_services',industry:'IT Services & Consulting',hq:'Mumbai, India',employees:'~6,07,000',segments:['BFSI','Retail & CPG','Communication & Media','Manufacturing','Life Sciences & Healthcare','Technology'],presence:'55+ countries',founded:'1968',
+ description:'Tata Consultancy Services is India’s largest IT services company and part of the Tata Group. It is one of the world’s most valuable IT brands, known for stability, scale, and a vast fresher-hiring engine.',
+ business:{revenueStreams:['IT & application services','Cloud & digital transformation','Consulting & cognitive business operations','Products & platforms (TCS BaNCS, ignio)','Engineering & R&D services'],products:['TCS BaNCS (banking)','ignio (AIOps)','TCS iON (assessments/ERP)','Quartz (blockchain)','TCS MasterCraft'],customers:['World’s largest banks & insurers','Global retailers','Telecom & manufacturing leaders','Government & public sector'],valueProp:'Unmatched scale, delivery reliability and domain depth, backed by the trust of the Tata brand.'},
+ salaryRange:'₹3.4 LPA (Ninja) – ₹9–11+ LPA (Digital / Prime via CodeVita)',
+ swot:{strengths:['Largest scale & client base in Indian IT','Exceptional delivery track record & low attrition','Strong free cash flow and dividends','Tata Group trust & governance'],weaknesses:['Law-of-large-numbers growth drag','High exposure to BFSI cyclicality','Premium valuation leaves little room for error','Margin pressure from wage hikes'],opportunities:['AI/GenAI-led transformation at scale','Large cost-optimisation & consolidation deals','Cloud and cybersecurity demand','Sovereign & GovTech projects'],threats:['Macro-driven IT budget cuts','Rising competition from global SIs','Currency volatility','Talent war & automation of routine work']},
+ competitors:[{name:'Infosys',position:'No.2 in India',diff:'Strong digital narrative; smaller scale than TCS.'},{name:'Accenture',position:'Global leader',diff:'Higher consulting mix and revenue per employee.'},{name:'Cognizant',position:'Peer',diff:'US-heavy, strong in healthcare; lower margins.'},{name:'HCLTech',position:'Peer',diff:'Leader in infrastructure & engineering services.'}],
+ industryIntel:{overview:'India’s flagship IT exporter operating at the largest scale, increasingly competing on AI-led productivity rather than pure cost arbitrage.',trends:['GenAI in delivery & operations','Mega cost-takeout deals','Cloud + data platform modernisation','Subdued discretionary tech spend'],outlook:'Scale and a strong deal pipeline cushion TCS through soft macro; AI-led efficiency could pressure linear headcount growth.',kpis:[{label:'Headcount',value:'~6 lakh',foot:'Largest in Indian IT'},{label:'Operating margin',value:'~24–25%',foot:'Industry-leading'},{label:'Attrition (LTM)',value:'~12–13%',foot:'Lowest among peers'},{label:'Order book (TCV)',value:'$30B+ /yr',foot:'Strong deal wins'}]}},
+wipro:{slug:'wipro',name:'Wipro',logo:'Wi',color:'#341e6b',type:'it_services',industry:'IT Services & Consulting',hq:'Bengaluru, India',employees:'~2,34,000',segments:['BFSI','Health & Life Sciences','Consumer','Energy & Utilities','Communications','Technology'],presence:'65+ countries',founded:'1945 (IT from 1980s)',
+ description:'Wipro is a leading global IT, consulting and business-process services company. Once a vegetable-oil business, it transformed into a top Indian IT exporter and has pivoted hard toward consulting-led, AI-first services.',
+ business:{revenueStreams:['IT services & application development','Consulting (Capco, FullStride Cloud)','Digital & cloud transformation','Engineering services','Cybersecurity & managed services'],products:['Wipro ai360','FullStride Cloud','Wipro HOLMES (AI/automation)','Capco (financial consulting)'],customers:['Global banks & insurers','Healthcare & pharma','Energy & utilities firms','Consumer & retail brands'],valueProp:'Consulting-led, AI-first transformation combining domain consulting (Capco) with at-scale delivery.'},
+ salaryRange:'₹3.5 LPA (Project Engineer) – ₹8–10+ LPA (Turbo / WILP advanced)',
+ swot:{strengths:['Strong consulting via Capco acquisition','Diversified vertical mix','Solid cash position','Renewed AI-first strategy (ai360)'],weaknesses:['Growth has lagged larger peers','Leadership churn in recent years','Lower margins than TCS/Infosys','Integration of acquisitions'],opportunities:['AI & cloud transformation deals','Cross-sell consulting + delivery','Cybersecurity demand','Large-deal momentum'],threats:['Macro weakness in key verticals','Aggressive competition','Attrition & wage costs','Execution risk on turnaround']},
+ competitors:[{name:'Infosys',position:'Larger peer',diff:'Stronger growth and digital brand.'},{name:'TCS',position:'Market leader',diff:'Far larger scale and margins.'},{name:'HCLTech',position:'Larger peer',diff:'Leads in engineering & infrastructure.'},{name:'Tech Mahindra',position:'Close peer',diff:'Telecom-heavy portfolio.'}],
+ industryIntel:{overview:'A tier-1 Indian IT exporter in turnaround mode, betting on consulting-led and AI-first services to close the growth gap with leaders.',trends:['AI-first delivery (ai360)','Consulting + tech bundling','Cloud & cybersecurity','Cost-optimisation deals'],outlook:'Execution of the turnaround and large-deal conversion are the key swing factors; sector tailwinds from AI remain supportive.',kpis:[{label:'Headcount',value:'~2.3 lakh',foot:'Tier-1 scale'},{label:'Operating margin',value:'~16–17%',foot:'Below top peers'},{label:'Attrition',value:'~14–15%',foot:'Improving'},{label:'Consulting mix',value:'Rising',foot:'Capco-led'}]}},
+accenture:{slug:'accenture',name:'Accenture',logo:'Ac',color:'#a100ff',type:'it_services',industry:'Professional Services & Technology Consulting',hq:'Dublin, Ireland',employees:'~7,74,000',segments:['Strategy & Consulting','Technology','Operations','Industry X (engineering)','Song (experience/marketing)'],presence:'120+ countries',founded:'1989',
+ description:'Accenture is a global professional-services leader blending strategy, consulting, technology and operations. India is its largest employee base, and it is a flagship recruiter across Indian campuses for both tech and consulting roles.',
+ business:{revenueStreams:['Technology services & system integration','Strategy & management consulting','Managed operations (BPO)','Industry X (digital engineering)','Accenture Song (marketing/experience)'],products:['myWizard (delivery automation)','GenAI Studio','SynOps (intelligent operations)','Industry platforms & accelerators'],customers:['Most of the Global Fortune 500','Governments & public sector','Banks, telcos, healthcare, retail'],valueProp:'A single partner spanning strategy to execution — “360° value” combining consulting depth with at-scale technology delivery.'},
+ salaryRange:'₹4.5 LPA (ASE) – ₹11–14+ LPA (advanced/consulting tracks)',
+ swot:{strengths:['Global leader across strategy + tech','Diversified industries & geographies','Strong GenAI positioning & investments','Premium clients and pricing'],weaknesses:['Large size moderates growth rates','High people cost base','Exposure to discretionary spend','Complex, matrixed organisation'],opportunities:['Enterprise GenAI reinvention wave','Cloud & data modernisation','Managed services expansion','Acquisitions for capability'],threats:['Macro slowdown in consulting demand','Competition from Indian IT & Big 4','Talent costs & utilisation','Currency exposure']},
+ competitors:[{name:'Deloitte',position:'Big 4 leader',diff:'Stronger in audit/advisory; partnership model.'},{name:'TCS',position:'IT leader',diff:'Lower cost delivery; less strategy consulting.'},{name:'IBM Consulting',position:'Peer',diff:'Hybrid cloud & AI (watsonx) led.'},{name:'Cognizant',position:'Peer',diff:'Digital services; US-centric.'}],
+ industryIntel:{overview:'Global IT-and-consulting leader sitting at the intersection of strategy and technology, currently riding enterprise demand for GenAI-led reinvention.',trends:['GenAI reinvention programmes','Cloud & data foundations','Managed services growth','Talent reskilling at scale'],outlook:'Best-positioned to capture large transformation budgets, though near-term consulting demand is sensitive to the macro cycle.',kpis:[{label:'Bookings',value:'$80B+ /yr',foot:'New bookings'},{label:'GenAI bookings',value:'Multi-$B',foot:'Fast-growing'},{label:'Headcount',value:'~7.7 lakh',foot:'India largest base'},{label:'Operating margin',value:'~15%',foot:'Services-led'}]}},
+amazon:{slug:'amazon',name:'Amazon',logo:'a',color:'#ff9900',type:'product_tech',industry:'E-commerce, Cloud & Technology',hq:'Seattle, USA (India HQ: Bengaluru)',employees:'~1.5 million',segments:['North America','International','AWS (Cloud)','Advertising','Devices & Alexa'],presence:'20+ countries',founded:'1994',
+ description:'Amazon is a global technology giant spanning e-commerce, cloud computing (AWS), digital advertising, devices, and entertainment. India is a major engineering and operations hub, hiring heavily for SDE and analytics roles.',
+ business:{revenueStreams:['Online & physical stores (retail)','AWS cloud services','Third-party seller services & fulfillment','Advertising','Subscriptions (Prime)'],products:['Amazon.in marketplace','AWS (EC2, S3, etc.)','Alexa & Echo devices','Prime Video','Kindle'],customers:['Hundreds of millions of consumers','Enterprises & startups (AWS)','Third-party sellers','Advertisers'],valueProp:'Customer obsession at scale — vast selection, low prices, fast delivery, and the world’s leading cloud platform.'},
+ salaryRange:'₹18 – 45+ LPA total comp for SDE-1 (base + RSUs + sign-on)',
+ swot:{strengths:['AWS cloud market leadership','Unmatched logistics & fulfillment network','Huge Prime ecosystem & data','Deep engineering culture'],weaknesses:['Thin retail margins','Regulatory & antitrust scrutiny','High operating complexity','Intense work-culture reputation'],opportunities:['Generative AI on AWS (Bedrock)','Advertising growth','India & emerging markets','Healthcare & grocery expansion'],threats:['Cloud competition (Azure, GCP)','Regulatory action in India/EU/US','Macro pressure on consumer spend','Rising logistics costs']},
+ competitors:[{name:'Flipkart (Walmart)',position:'India e-comm rival',diff:'Stronger India-first roots and seller base.'},{name:'Microsoft Azure',position:'Cloud rival',diff:'Enterprise + AI (OpenAI) bundling.'},{name:'Google Cloud',position:'Cloud rival',diff:'Data/AI and Kubernetes strength.'},{name:'Reliance/JioMart',position:'India rival',diff:'Deep offline retail + telecom integration.'}],
+ industryIntel:{overview:'Global tech spans e-commerce and cloud — the cloud market alone is a $250B+ and fast-growing arena where AWS leads and AI workloads are the new battleground.',trends:['GenAI driving cloud consumption','Quick-commerce in India','Retail media / advertising boom','Cost discipline after over-hiring'],outlook:'Cloud + AI and advertising are the durable profit engines; India remains a high-growth market for both commerce and talent.',kpis:[{label:'AWS run-rate',value:'$100B+',foot:'Annualised revenue'},{label:'Cloud share',value:'~30%',foot:'AWS, No.1'},{label:'Prime members',value:'200M+',foot:'Global'},{label:'India sellers',value:'14 lakh+',foot:'On marketplace'}]}},
+google:{slug:'google',name:'Google',logo:'G',color:'#4285f4',type:'product_tech',industry:'Internet, Software & AI',hq:'Mountain View, USA (India: Bengaluru, Hyderabad, Gurugram)',employees:'~1,80,000 (Alphabet)',segments:['Search & Advertising','Google Cloud','YouTube','Android & Play','Hardware (Pixel)','Google DeepMind (AI)'],presence:'Global',founded:'1998',
+ description:'Google (Alphabet) is the world’s dominant search and digital-advertising company, with a fast-growing cloud business and a leading AI research arm (DeepMind, Gemini). India is among its largest engineering hubs.',
+ business:{revenueStreams:['Search & display advertising','YouTube ads','Google Cloud (GCP & Workspace)','Play Store & app commerce','Hardware (Pixel, Nest)'],products:['Google Search','Android & Chrome','YouTube','Google Cloud / Workspace','Gemini (AI)','Maps'],customers:['Billions of users','Advertisers (SMB to enterprise)','Enterprises (Cloud)','Android OEMs & developers'],valueProp:'Organise the world’s information and make it universally accessible — monetised through unmatched advertising reach and AI.'},
+ salaryRange:'₹25 – 60+ LPA total comp for SWE-L3 (base + stock + bonus)',
+ swot:{strengths:['Dominant search & ad monopoly economics','World-class AI research (DeepMind/Gemini)','Massive distribution (Android, Chrome, YouTube)','Deep cash reserves'],weaknesses:['Over-reliance on advertising revenue','Antitrust scrutiny globally','Cloud still behind AWS/Azure','Bureaucracy / product sprawl'],opportunities:['Gemini AI across products','Cloud share gains','AI-driven ad efficiency','India digital growth'],threats:['Generative-AI disruption to search','Antitrust rulings','Cloud competition','Regulatory pressure on data/ads']},
+ competitors:[{name:'Microsoft',position:'Big-tech rival',diff:'Enterprise + OpenAI-powered Copilot/Bing.'},{name:'Amazon',position:'Ads & cloud rival',diff:'Retail-media ads + AWS leadership.'},{name:'Meta',position:'Ads rival',diff:'Social/feed advertising dominance.'},{name:'OpenAI',position:'AI challenger',diff:'ChatGPT threatens search behaviour.'}],
+ industryIntel:{overview:'The internet/AI sector is being reshaped by generative AI, which simultaneously threatens classic search and unlocks new cloud and product revenue.',trends:['GenAI integrated into search & apps','AI infra & TPU/GPU buildout','Cloud growth & margins','Privacy/regulation reshaping ads'],outlook:'Google must defend search economics while monetising AI; its research lead and distribution are strong moats, but disruption risk is real.',kpis:[{label:'Search share',value:'~90%',foot:'Global search'},{label:'Cloud growth',value:'25–30%',foot:'YoY'},{label:'YouTube ads',value:'$30B+ /yr',foot:'Annual'},{label:'Android devices',value:'3B+',foot:'Active'}]}},
+microsoft:{slug:'microsoft',name:'Microsoft',logo:'M',color:'#0078d4',type:'product_tech',industry:'Software, Cloud & AI',hq:'Redmond, USA (India: Hyderabad, Bengaluru, Noida)',employees:'~2,28,000',segments:['Productivity & Business (Office, LinkedIn)','Intelligent Cloud (Azure)','More Personal Computing (Windows, Xbox)'],presence:'Global',founded:'1975',
+ description:'Microsoft is a global leader in software, cloud (Azure), productivity tools and gaming, and a frontrunner in enterprise AI via its OpenAI partnership and Copilot. India hosts large R&D and engineering centres.',
+ business:{revenueStreams:['Azure cloud services','Microsoft 365 & Office subscriptions','Windows & devices','LinkedIn','Gaming (Xbox, Activision)','Dynamics & enterprise software'],products:['Azure','Microsoft 365 / Copilot','Windows','Teams','LinkedIn','Xbox','GitHub'],customers:['Enterprises of all sizes','Developers (GitHub, Azure)','Consumers & gamers','Governments'],valueProp:'The enterprise productivity and cloud backbone — now infused with AI (Copilot) across every product.'},
+ salaryRange:'₹22 – 55+ LPA total comp for SDE (base + stock + bonus)',
+ swot:{strengths:['Azure cloud strength & enterprise lock-in','Leading AI position via OpenAI/Copilot','Diversified, sticky revenue','Strong developer ecosystem (GitHub)'],weaknesses:['Windows/PC market maturity','Integration of large acquisitions','Regulatory scrutiny (Activision, bundling)','Premium pricing pressure'],opportunities:['Copilot monetisation across M365','Azure AI workloads','Gaming expansion (Activision)','India enterprise & SMB growth'],threats:['Cloud competition (AWS, GCP)','AI cost/compute pressures','Antitrust & regulatory action','Security/reputation incidents']},
+ competitors:[{name:'Amazon (AWS)',position:'Cloud leader',diff:'Larger cloud share & breadth.'},{name:'Google',position:'AI & cloud rival',diff:'Search/ads + DeepMind AI.'},{name:'Salesforce',position:'SaaS rival',diff:'CRM/enterprise apps focus.'},{name:'Oracle',position:'Enterprise rival',diff:'Databases & cloud infra.'}],
+ industryIntel:{overview:'Enterprise software and cloud are converging with AI; Microsoft’s early OpenAI bet positioned it at the centre of the GenAI productivity wave.',trends:['Copilot/AI assistants in every app','Azure AI infrastructure demand','SaaS consolidation','Security & compliance focus'],outlook:'AI monetisation across its installed base is the key growth lever; cloud and productivity provide a durable, high-margin base.',kpis:[{label:'Azure growth',value:'~30%',foot:'YoY'},{label:'M365 seats',value:'400M+',foot:'Commercial'},{label:'Cloud share',value:'~25%',foot:'No.2'},{label:'Copilot adoption',value:'Scaling',foot:'Enterprise'}]}},
+deloitte:{slug:'deloitte',name:'Deloitte',logo:'De',color:'#86bc25',type:'consulting',industry:'Professional Services (Audit, Consulting, Tax, Advisory)',hq:'London, UK (India: USI across major cities)',employees:'~4,60,000',segments:['Audit & Assurance','Consulting','Risk & Financial Advisory','Tax & Legal','Deloitte Digital'],presence:'150+ countries',founded:'1845',
+ description:'Deloitte is the largest of the Big Four professional-services firms, spanning audit, consulting, tax and advisory. Its US-India (USI) arm is a huge graduate recruiter across consulting, technology and analyst roles.',
+ business:{revenueStreams:['Consulting (strategy, tech, operations)','Audit & assurance','Risk & financial advisory','Tax & legal services','Managed services'],products:['Deloitte Digital','Industry & technology accelerators','GenAI / Trustworthy AI offerings','Risk & cyber platforms'],customers:['Most of the Global Fortune 500','Governments & regulators','Large enterprises across sectors'],valueProp:'Breadth across the entire professional-services spectrum, combining deep industry expertise with technology delivery.'},
+ salaryRange:'₹6.5 – 12+ LPA (Analyst/Consultant; strategy roles higher)',
+ swot:{strengths:['Largest Big-4 by revenue & people','Full-spectrum services breadth','Strong brand & global network','Deep India delivery (USI)'],weaknesses:['Potential audit-vs-consulting conflicts','High people-cost model','Partnership decision complexity','Exposure to discretionary spend'],opportunities:['GenAI advisory & implementation','Cyber & risk demand','GovTech & regulatory work','Managed services growth'],threats:['Regulatory scrutiny on audit independence','Competition from Accenture & MBB','Talent attrition','Macro-driven advisory slowdown']},
+ competitors:[{name:'PwC',position:'Big 4 peer',diff:'Strong audit & deals advisory.'},{name:'EY',position:'Big 4 peer',diff:'Strong in consulting & tax.'},{name:'KPMG',position:'Big 4 peer',diff:'Smaller of the four; audit/advisory.'},{name:'Accenture',position:'Consulting rival',diff:'Tech-led, no audit conflicts.'}],
+ industryIntel:{overview:'The Big Four dominate global professional services; growth is shifting from traditional audit toward consulting, technology, risk and GenAI advisory.',trends:['GenAI advisory & adoption','Cyber & regulatory compliance','ESG / sustainability assurance','Managed services expansion'],outlook:'Consulting and technology advisory drive growth, though audit-independence regulation and macro caution shape the near term.',kpis:[{label:'Global revenue',value:'$65B+',foot:'Largest Big 4'},{label:'People',value:'~4.6 lakh',foot:'Worldwide'},{label:'Consulting mix',value:'Rising',foot:'Vs audit'},{label:'India (USI)',value:'1 lakh+',foot:'Delivery base'}]}},
+nestle:{slug:'nestle',name:'Nestlé',logo:'Ne',color:'#63513d',type:'fmcg',industry:'FMCG — Food & Beverages',hq:'Vevey, Switzerland (India: Gurugram)',employees:'~2,77,000 globally',segments:['Beverages (coffee)','Nutrition & Health Science','Dairy & Ice Cream','Prepared Dishes (Maggi)','Confectionery','PetCare'],presence:'180+ countries',founded:'1866',
+ description:'Nestlé is the world’s largest food & beverage company, owning iconic brands like Maggi, Nescafé, KitKat and Milkmaid. Nestlé India is a premium FMCG recruiter for management-trainee and supply-chain roles.',
+ business:{revenueStreams:['Packaged foods & prepared dishes','Beverages (coffee & malted drinks)','Milk products & nutrition','Confectionery','Out-of-home & e-commerce channels'],products:['Maggi','Nescafé','KitKat','Milkmaid','Cerelac','Munch','a+ dairy'],customers:['Households across India','Modern trade & kirana retail','Quick-commerce & e-commerce','Out-of-home / HoReCa'],valueProp:'Trusted, science-backed nutrition and iconic everyday brands with deep distribution reach.'},
+ salaryRange:'₹12 – 25+ LPA (management trainee); ₹6–10 LPA other graduate roles',
+ swot:{strengths:['Iconic, high-recall brand portfolio','Deep rural & urban distribution','Strong R&D and premiumisation','Pricing power & brand loyalty'],weaknesses:['Past controversies (e.g., Maggi recall)','Dependence on a few mega-brands','Input-cost (commodity) volatility','Limited low-price-point penetration'],opportunities:['Premiumisation & health/nutrition trend','Quick-commerce & e-commerce growth','Rural expansion','New categories (petcare, health science)'],threats:['Commodity inflation (coffee, cocoa, milk)','Intense competition (HUL, ITC, local brands)','Regulatory/health scrutiny on processed foods','Private-label growth']},
+ competitors:[{name:'Hindustan Unilever',position:'FMCG leader (India)',diff:'Broader home & personal care portfolio.'},{name:'ITC',position:'Diversified FMCG',diff:'Foods + cigarettes + paper; strong distribution.'},{name:'Britannia',position:'Foods rival',diff:'Leader in biscuits & bakery.'},{name:'Mondelez',position:'Confectionery rival',diff:'Cadbury chocolate dominance.'}],
+ industryIntel:{overview:'Indian FMCG is a ~$120B+ market driven by rising incomes, premiumisation and a rapid shift to quick-commerce, with rural demand a key swing factor.',trends:['Quick-commerce reshaping distribution','Premiumisation & health-led products','Rural recovery','Commodity-cost cycles'],outlook:'Volume-led growth with premiumisation supports the long-term story; near-term margins hinge on commodity costs and rural demand.',kpis:[{label:'India FMCG size',value:'$120B+',foot:'And growing'},{label:'Rural share',value:'~35%',foot:'Of FMCG sales'},{label:'Q-commerce',value:'Fastest-growing',foot:'Channel'},{label:'Gross margin',value:'High',foot:'Brand-led pricing'}]}},
+unilever:{slug:'unilever',name:'Hindustan Unilever (HUL)',logo:'HU',color:'#1f36c7',type:'fmcg',industry:'FMCG — Home, Personal Care & Foods',hq:'Mumbai, India (parent: Unilever, London)',employees:'~21,000 (HUL)',segments:['Home Care','Beauty & Wellbeing','Personal Care','Foods','Ice Cream'],presence:'India-wide; Unilever in 190+ countries',founded:'1933',
+ description:'Hindustan Unilever is India’s largest FMCG company, owning household names like Surf Excel, Dove, Lux, Lifebuoy, Rin and Brooke Bond. Its UFLP leadership programme is among the most coveted campus offers in India.',
+ business:{revenueStreams:['Home care (detergents, cleaners)','Beauty & personal care','Foods & refreshment','Ice cream','Premium & nutrition portfolios'],products:['Surf Excel','Rin','Dove','Lux','Lifebuoy','Lakmé','Brooke Bond','Horlicks','Kwality Wall’s'],customers:['~9 crore Indian households','Kirana & modern trade','Quick-commerce & e-commerce','Rural distribution networks'],valueProp:'Unrivalled distribution and a powerhouse brand portfolio across every price tier, from mass to premium.'},
+ salaryRange:'₹25–28+ LPA (UFLP management trainee); ₹8–12 LPA other roles',
+ swot:{strengths:['Largest FMCG distribution in India','Powerful multi-category brand portfolio','Best-in-class talent & training (UFLP)','Strong rural reach'],weaknesses:['Mature core categories, slow volume growth','High competition in every segment','Exposure to rural-demand cycles','Premiumisation still developing'],opportunities:['Premiumisation & beauty/wellbeing','Quick-commerce & D2C','Rural recovery','Health & nutrition (Horlicks)'],threats:['Local & D2C challenger brands','Commodity inflation','Private labels in modern trade','Slow rural demand']},
+ competitors:[{name:'ITC',position:'Diversified FMCG',diff:'Strong foods + tobacco cash engine.'},{name:'Nestlé India',position:'Foods leader',diff:'Focused premium food brands.'},{name:'P&G',position:'Personal care rival',diff:'Strong in premium personal/health care.'},{name:'Dabur',position:'Ayurveda rival',diff:'Natural/herbal positioning.'}],
+ industryIntel:{overview:'India’s FMCG bellwether, HUL’s performance is a proxy for consumption; growth is driven by premiumisation, rural recovery and new-age channels.',trends:['Premiumisation & beauty/wellbeing','Quick-commerce & D2C disruption','Rural demand recovery','Natural/clean-label products'],outlook:'Volume growth recovery plus premiumisation underpin the story; D2C challengers and commodity costs are the main watch points.',kpis:[{label:'Households reached',value:'~9 crore',foot:'In India'},{label:'Distribution',value:'90 lakh+',foot:'Retail outlets'},{label:'Brands >₹1,000cr',value:'19+',foot:'Power brands'},{label:'EBITDA margin',value:'~23–24%',foot:'Industry-leading'}]}},
+itc:{slug:'itc',name:'ITC Limited',logo:'IT',color:'#0a5c36',type:'fmcg',industry:'Diversified FMCG, Hotels, Paper & Agri',hq:'Kolkata, India',employees:'~26,000',segments:['FMCG — Cigarettes','FMCG — Others (Foods, Personal Care)','Hotels','Paperboards & Packaging','Agri Business'],presence:'Pan-India; exports to 90+ countries',founded:'1910',
+ description:'ITC is a diversified Indian conglomerate spanning FMCG, hotels, paperboards and agri-business. Its fast-growing foods portfolio (Aashirvaad, Sunfeast, Bingo, Yippee) makes it a major FMCG campus recruiter alongside its tobacco cash engine.',
+ business:{revenueStreams:['Cigarettes (largest profit pool)','FMCG — packaged foods & personal care','Hotels (ITC Hotels)','Paperboards & packaging','Agri-business & exports'],products:['Aashirvaad','Sunfeast','Bingo!','Yippee!','Classmate','Savlon','Fiama','Gold Flake (cigarettes)'],customers:['Indian households','Kirana & modern trade','Institutional & agri buyers','Hotel guests'],valueProp:'A diversified portfolio where a strong cigarette cash engine funds a rapidly scaling, branded FMCG and agri business.'},
+ salaryRange:'₹14 – 22+ LPA (management trainee); ₹7–11 LPA other roles',
+ swot:{strengths:['Diversified, resilient business mix','Strong cash flows from cigarettes','Fast-growing branded foods portfolio','Deep agri & distribution backbone'],weaknesses:['Reliance on cigarettes for profits','Lower margins in new FMCG vs peers','Capital tied across many segments','ESG perception of tobacco'],opportunities:['Scaling branded packaged foods','Premiumisation & health foods','Hotels demerger value unlock','Exports & agri value-addition'],threats:['Tobacco taxation & regulation','Intense FMCG competition','Commodity inflation','Changing consumer health preferences']},
+ competitors:[{name:'Hindustan Unilever',position:'FMCG leader',diff:'Bigger personal/home-care portfolio.'},{name:'Nestlé India',position:'Foods rival',diff:'Premium, focused food brands.'},{name:'Britannia',position:'Foods rival',diff:'Leader in biscuits.'},{name:'Godfrey Phillips',position:'Tobacco rival',diff:'Smaller cigarette player.'}],
+ industryIntel:{overview:'A diversified FMCG conglomerate using its cigarette profit pool to build branded foods leadership, while paper, hotels and agri add cyclical balance.',trends:['Branded-foods premiumisation','Quick-commerce distribution','Value unlock (hotels demerger)','Agri value-addition & exports'],outlook:'New FMCG and agri scaling drives the growth narrative; cigarette taxation policy remains the key risk and cash anchor.',kpis:[{label:'FMCG-Others rev',value:'₹20,000cr+',foot:'Fast-scaling'},{label:'Foods brands',value:'6 mega',foot:'₹1,000cr+ each'},{label:'Distribution',value:'Pan-India',foot:'Deep reach'},{label:'Segments',value:'5',foot:'Diversified'}]}}
+};
+
+/* ---------------- Store / resolver ---------------- */
+var ADMIN_KEY='pb_admin_companies';
+function slugify(n){return (n||'').toString().trim().toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+function lsGet(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function getAdminCompanies(){return lsGet(ADMIN_KEY,{});}
+function saveAdminCompany(c){var all=getAdminCompanies();var s=c.slug||slugify(c.name);all[s]=Object.assign({},c,{slug:s,_admin:true});lsSet(ADMIN_KEY,all);return s;}
+function deleteAdminCompany(s){var all=getAdminCompanies();delete all[s];lsSet(ADMIN_KEY,all);}
+function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function applyArchetype(c){
+  var a=archetypes[c.type]||archetypes.generic;
+  var merged=Object.assign({
+    archetypeLabel:a.label,roles:c.roles||a.roles,eligibility:c.eligibility||a.eligibility,
+    salaryRange:c.salaryRange||a.salaryRange,skills:c.skills||a.skills,hiringTimeline:c.hiringTimeline||a.hiringTimeline,
+    interview:c.interview||a.interview,faqs:c.faqs||a.faqs,checklist:CHECKLIST
+  },c);
+  merged.industryIntel=c.industryIntel||{overview:'An overview of '+c.name+'’s industry. Add details from the company’s sector and recent news.',trends:['Key trend to research','Key trend to research','Key trend to research'],outlook:'Summarise the medium-term outlook for this sector.',kpis:[{label:'Market size',value:'—',foot:'Research'},{label:'Growth',value:'—',foot:'Research'},{label:'Key metric',value:'—',foot:'Research'},{label:'Key metric',value:'—',foot:'Research'}]};
+  return merged;
+}
+function titleCase(s){return s.replace(/-/g,' ').replace(/\b\w/g,function(m){return m.toUpperCase();});}
+function generateCompany(raw){
+  var name=titleCase((raw||'').toString().trim());var slug=slugify(name);
+  var initials=name.split(' ').slice(0,2).map(function(w){return w[0];}).join('').toUpperCase();
+  var base={slug:slug,name:name,logo:initials||'Co',color:'#2563eb',type:'generic',industry:'Industry — to be confirmed',hq:'See official careers page',employees:'N/A',segments:['Core business segment'],presence:'Multiple markets',
+    description:name+' is featured here with an auto-generated placement starter dashboard. Verify the details below against the company’s official careers page and recent news, then use the AI Coach and checklist to structure your preparation.',
+    business:{revenueStreams:['Primary product / service revenue','Secondary / adjacent revenue lines'],products:['Flagship product or service','Supporting offerings'],customers:['Target customer segment(s)'],valueProp:name+'’s core value proposition — confirm from the company’s site.'},
+    swot:{strengths:['Identify the company’s key strengths from its site & news'],weaknesses:['Note known challenges or weaknesses'],opportunities:['Growth opportunities in its market'],threats:['Competitive and macro threats']},
+    competitors:[{name:'Competitor A',position:'Direct rival',diff:'How it differs — research this.'},{name:'Competitor B',position:'Adjacent player',diff:'How it differs — research this.'}]};
+  return applyArchetype(base);
+}
+function resolveCompany(slug){
+  var key=slugify(slug);var admin=getAdminCompanies();
+  if(admin[key])return Object.assign(applyArchetype(admin[key]),{generated:false});
+  if(companies[key])return Object.assign(applyArchetype(companies[key]),{generated:false});
+  var all=Object.assign({},companies,admin);var hit=null;
+  Object.keys(all).forEach(function(k){var c=all[k];var sc=slugify(c.name);if(!hit&&(sc===key||sc.indexOf(key)>=0||key.indexOf(sc)>=0))hit=c;});
+  if(hit)return Object.assign(applyArchetype(hit),{generated:false});
+  return Object.assign(generateCompany(slug),{generated:true});
+}
+function searchSuggestions(q){
+  q=(q||'').trim().toLowerCase();if(!q)return[];
+  var all=Object.assign({},companies,getAdminCompanies());var out=[];
+  Object.keys(all).forEach(function(k){var c=all[k];if(out.length<6&&(c.name.toLowerCase().indexOf(q)>=0||(c.industry||'').toLowerCase().indexOf(q)>=0))out.push({slug:c.slug,name:c.name,logo:c.logo,color:c.color,industry:c.industry});});
+  return out;
+}
+
+/* ---------------- AI Coach ---------------- */
+var SUGGESTIONS=['Why should I join this company?','Tell me about the competitors','What HR questions can be asked?','Help me prepare for the interview','What is the expected salary?','Give me a 7-day prep plan'];
+function bullets(arr,n){return arr.slice(0,n||99).map(function(x){return '• '+x;}).join('\n');}
+function coachReply(c,raw){
+  var q=raw.toLowerCase(),n=c.name;function has(){for(var i=0;i<arguments.length;i++){if(q.indexOf(arguments[i])>=0)return true;}return false;}
+  if(has('hi','hello','hey')&&q.length<12)return "Hi! I'm your AI Placement Coach for "+n+". Ask me why to join, about competitors, the interview process, likely questions, salary, or for a prep plan.";
+  if(has('why','join','should i')&&!has('competitor'))return 'Why '+n+' is a strong choice:\n'+bullets(c.swot.strengths)+'\n\nIn one line: '+c.business.valueProp+'\n\nIn an interview, frame your answer around 2 of these strengths + how the role matches your goals.';
+  if(has('competitor','rival','competition','vs '))return n+"'s main competitors:\n"+c.competitors.map(function(x){return '• '+x.name+' — '+x.position+': '+x.diff;}).join('\n')+'\n\nTip: knowing how '+n+' differs from these is a classic "why us, not them?" question.';
+  if(has('hr question','hr round','hr interview')||(has('hr')&&has('question')))return 'Likely HR questions at '+n+':\n'+bullets(c.faqs.hr)+'\n\nPrepare a crisp "Tell me about yourself" and a sharp "Why '+n+'?" — those two open most HR rounds.';
+  if(has('technical','coding','dsa','tech round'))return 'Common technical questions for '+n+':\n'+bullets(c.faqs.technical)+'\n\nFocus your prep on: '+c.skills.slice(0,4).join(', ')+'.';
+  if(has('case','guesstimate','estimate'))return 'Case / problem-solving prompts for '+n+':\n'+bullets(c.faqs.case)+'\n\nStructure first, then solve aloud, and end with a clear recommendation.';
+  if(has('behavioral','behaviour','star','situational'))return 'Behavioral questions for '+n+':\n'+bullets(c.faqs.behavioral)+'\n\nAnswer with STAR — Situation, Task, Action, Result — and quantify the result.';
+  if(has('salary','package','ctc','pay','compensation','lpa'))return 'Expected pay at '+n+': '+c.salaryRange+'.\n\nCommon roles: '+c.roles.slice(0,3).join(', ')+'.\nNote: actual offers vary by role, campus tier, and performance.';
+  if(has('process','round','stages','how many'))return n+"'s interview process has "+c.interview.length+' stages:\n'+c.interview.map(function(r,i){return (i+1)+'. '+r.stage+' — '+r.desc;}).join('\n');
+  if(has('prepare','prep','plan','ready','roadmap','study'))return 'Your prep roadmap for '+n+':\nDay 1–2: Research — business model, segments, recent news.\nDay 3: Study competitors ('+c.competitors.map(function(x){return x.name;}).slice(0,3).join(', ')+') and the SWOT.\nDay 4–5: Practise questions — start with '+c.skills.slice(0,3).join(', ')+'.\nDay 6: Prepare your intro + 5 STAR stories.\nDay 7: Full mock interview, then review.\n\nTick these off in the Placement Readiness Checklist on this page.';
+  if(has('swot','strength','weakness','opportunit','threat'))return n+' SWOT snapshot:\nStrengths: '+c.swot.strengths.slice(0,2).join('; ')+'\nWeaknesses: '+c.swot.weaknesses.slice(0,2).join('; ')+'\nOpportunities: '+c.swot.opportunities.slice(0,2).join('; ')+'\nThreats: '+c.swot.threats.slice(0,2).join('; ');
+  if(has('business model','revenue','make money','business'))return 'How '+n+' makes money:\n'+bullets(c.business.revenueStreams)+'\n\nValue proposition: '+c.business.valueProp;
+  if(has('about','who','overview','tell me about')&&!has('competitor'))return n+' — '+c.industry+', HQ '+c.hq+'.\n'+c.description;
+  if(has('skill','learn','topics'))return 'Key skills to prepare for '+n+':\n'+bullets(c.skills);
+  return 'I can help with '+n+': why to join, competitors, the interview process, HR / technical / case questions, salary, required skills, or a 7-day prep plan. Try a suggestion below, or rephrase your question.';
+}
+
+/* ---------------- Icons ---------------- */
+var ICONS={search:'<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',building:'<path d="M3 21h18M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M9 7h.01M9 11h.01M9 15h.01M15 7h.01M15 11h.01M15 15h.01"/>',gauge:'<path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M13.4 12.6 19 7M4 20a8 8 0 1 1 16 0"/>',chat:'<path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/>',rupee:'<path d="M6 4h12M6 9h12M16 4c0 5-4 5-10 5 0 0 6 0 10 6"/>',swords:'<path d="M14.5 17.5 3 6V3h3l11.5 11.5M13 19l6-6M16 16l4 4M19 21l2-2M5 14l-2 2v3h3l2-2"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>',spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/>',check:'<path d="M20 6 9 17l-5-5"/>',chevron:'<path d="m6 9 6 6 6-6"/>',arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',briefcase:'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/>',chart:'<path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/>',doc:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/>',target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>',plus:'<path d="M12 5v14M5 12h14"/>',trash:'<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>',send:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',bulb:'<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12Z"/>'};
+function ico(name,size,stroke){return '<svg width="'+(size||20)+'" height="'+(size||20)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(stroke||2)+'" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle">'+(ICONS[name]||ICONS.search)+'</svg>';}
+
+/* ---------------- Ring widget ---------------- */
+function ring(percent,size,stroke,light){
+  size=size||132;stroke=stroke||12;var r=(size-stroke)/2,circ=2*Math.PI*r,off=circ-(percent/100)*circ;
+  var track=light?'rgba(255,255,255,.18)':'#e9eef6';var color=percent>=80?'#22c55e':percent>=50?'#60a5fa':'#f59e0b';
+  return '<div class="ring-wrap" style="width:'+size+'px;height:'+size+'px">'+
+    '<svg width="'+size+'" height="'+size+'" style="transform:rotate(-90deg)"><circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="'+track+'" stroke-width="'+stroke+'"/>'+
+    '<circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="'+color+'" stroke-width="'+stroke+'" stroke-dasharray="'+circ+'" stroke-dashoffset="'+off+'" stroke-linecap="round" style="transition:stroke-dashoffset .6s"/></svg>'+
+    '<div style="position:absolute;inset:0;display:grid;place-items:center"><div style="text-align:center"><div style="font-size:'+(size*.26)+'px;font-weight:800;line-height:1;color:'+(light?'#fff':'var(--navy-900)')+'">'+percent+'%</div>'+
+    '<div style="font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:'+(light?'#bcd0f0':'var(--faint)')+'">Ready</div></div></div></div>';
+}
+
+/* ---------------- Layout chrome ---------------- */
+function navbar(){return '<nav class="nav"><div class="container nav-inner">'+
+  '<a class="brand" onclick="go(\'/\')" style="cursor:pointer"><span class="brand-mark">PB</span>Placement Bible</a>'+
+  '<div class="nav-links"><a class="hide-sm" onclick="go(\'/\')">Home</a><a class="hide-sm" onclick="go(\'/company/amazon\')">Sample Dashboard</a><a class="hide-sm" onclick="go(\'/admin\')">Admin</a>'+
+  '<button class="btn btn-primary btn-sm" onclick="go(\'/\')">'+ico('search',16)+' Search</button></div></div></nav>';}
+function footer(){return '<footer class="footer"><div class="container"><div class="cols">'+
+  '<div><div class="brand" style="color:#fff;margin-bottom:12px"><span class="brand-mark">PB</span> Placement Bible</div>'+
+  '<p style="color:#aebfda;font-size:14px;max-width:320px">The Bloomberg Terminal of campus placements. Search any company and prepare with confidence — built for Indian students, interns and freshers.</p></div>'+
+  '<div><h5>Product</h5><a onclick="go(\'/company/infosys\')">Company Dashboards</a><a onclick="go(\'/company/amazon\')">AI Career Coach</a><a onclick="go(\'/admin\')">Admin Panel</a></div>'+
+  '<div><h5>Explore</h5><a onclick="go(\'/company/tcs\')">TCS</a><a onclick="go(\'/company/deloitte\')">Deloitte</a><a onclick="go(\'/company/unilever\')">HUL</a></div>'+
+  '<div><h5>Future</h5><a>Resume Analysis</a><a>AI Mock Interviews</a><a>Company Comparison</a></div></div>'+
+  '<div class="bottom"><span>© '+new Date().getFullYear()+' Placement Bible. For educational use. Figures are approximate.</span><span>Made for campus placements in India 🇮🇳</span></div></div></footer>';}
+
+/* ---------------- Search box ---------------- */
+function searchBoxHTML(id){return '<div style="position:relative"><form class="search" onsubmit="submitSearch(event,\''+id+'\');return false">'+
+  '<span style="color:var(--faint)">'+ico('search',22)+'</span>'+
+  '<input id="'+id+'" autocomplete="off" oninput="renderSuggest(\''+id+'\')" onfocus="renderSuggest(\''+id+'\')" placeholder="Search Amazon, Deloitte, Infosys, Nestlé, Unilever, Accenture…"/>'+
+  '<button class="btn btn-primary" type="submit">Analyze Company '+ico('arrow',18)+'</button></form>'+
+  '<div id="'+id+'-suggest"></div></div>';}
+function renderSuggest(id){
+  var inp=document.getElementById(id);if(!inp)return;var box=document.getElementById(id+'-suggest');var sug=searchSuggestions(inp.value);
+  if(!sug.length){box.innerHTML='';return;}
+  box.innerHTML='<div class="suggest-box">'+sug.map(function(s){return '<button type="button" class="suggest-row" onclick="go(\'/company/'+s.slug+'\')"><span class="logo-sq" style="width:36px;height:36px;font-size:14px;background:'+s.color+'">'+esc(s.logo)+'</span><span><span style="display:block;font-weight:600">'+esc(s.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(s.industry)+'</span></span></button>';}).join('')+'</div>';
+}
+function submitSearch(e,id){e.preventDefault();var v=document.getElementById(id).value;if(v&&v.trim())go('/company/'+slugify(v));}
+document.addEventListener('click',function(e){
+  document.querySelectorAll('[id$="-suggest"]').forEach(function(b){if(!b.parentNode.contains(e.target))b.innerHTML='';});
+});
+
+/* ---------------- HOME ---------------- */
+var FEATURES=[
+ {icon:'building',color:'#2563eb',bg:'#eff6ff',title:'Company Intelligence',text:'Overview, segments, global presence and business model — the full picture at a glance.'},
+ {icon:'gauge',color:'#7c3aed',bg:'#f1ecfd',title:'Placement Readiness Score',text:'A live score and interactive checklist that tracks exactly how prepared you are.'},
+ {icon:'briefcase',color:'#0891b2',bg:'#e3f6fb',title:'Interview Preparation',text:'Stage-by-stage rounds with tips and real sample questions for each.'},
+ {icon:'rupee',color:'#16a34a',bg:'#e8f7ee',title:'Salary Insights',text:'Expected packages by role, calibrated to Indian campus offers.'},
+ {icon:'swords',color:'#dc2626',bg:'#fdecec',title:'Competitor Analysis',text:'Who the company competes with and exactly how they differ.'},
+ {icon:'chart',color:'#d97706',bg:'#fef3e2',title:'Industry Intelligence',text:'Sector trends, outlook and KPIs so you can speak the company’s language.'},
+ {icon:'chat',color:'#0d9488',bg:'#e0f5f1',title:'AI Career Coach',text:'Ask anything about the company and get contextual, prep-focused answers.'}];
+var EXAMPLES=[['Amazon','amazon'],['Deloitte','deloitte'],['Infosys','infosys'],['Nestlé','nestle'],['Unilever','unilever'],['Accenture','accenture']];
+function renderHome(){
+  var feat=FEATURES.map(function(f){return '<div class="card card-pad card-hover feature"><div class="feature-ico" style="background:'+f.bg+';color:'+f.color+'">'+ico(f.icon,24)+'</div><h3>'+f.title+'</h3><p>'+f.text+'</p></div>';}).join('');
+  var ex=EXAMPLES.map(function(e,i){return '<b onclick="go(\'/company/'+e[1]+'\')">'+e[0]+'</b>'+(i<EXAMPLES.length-1?' · ':'');}).join('');
+  var allc=Object.assign({},companies,getAdminCompanies());
+  var pop=Object.keys(allc).map(function(k){var c=allc[k];return '<button class="card card-pad card-hover" onclick="go(\'/company/'+c.slug+'\')" style="text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center"><span class="logo-sq" style="width:46px;height:46px;background:'+c.color+'">'+esc(c.logo)+'</span><span><span style="display:block;font-weight:700">'+esc(c.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(c.industry)+'</span></span></button>';}).join('');
+  return navbar()+'<div class="fade-in">'+
+   '<section class="hero"><div class="hero-inner container">'+
+   '<span class="pill" style="background:rgba(255,255,255,.12);color:#cfe0ff">'+ico('spark',14)+' The Bloomberg Terminal of Placements</span>'+
+   '<h1 style="margin-top:18px">Everything You Need Before Your Placement Interview</h1>'+
+   '<p class="sub">Search any company and get company insights, interview preparation, salary information, hiring process, business model, competitors, SWOT analysis, and preparation resources in one dashboard.</p>'+
+   '<div class="search-wrap">'+searchBoxHTML('home-search')+'<div class="examples">Try:&nbsp;'+ex+'</div></div>'+
+   '<div class="hero-stats"><div class="hero-stat"><div class="n">11+</div><div class="l">Companies fully mapped</div></div><div class="hero-stat"><div class="n">10</div><div class="l">Dashboard sections</div></div><div class="hero-stat"><div class="n">∞</div><div class="l">Any company, instantly</div></div></div>'+
+   '</div></section>'+
+   '<section class="container" style="padding:64px 24px 20px"><div class="center" style="margin-bottom:40px"><div class="eyebrow">One dashboard, everything you need</div><h2 style="font-size:32px;margin-top:10px">Built to make you interview-ready</h2><p class="muted" style="max-width:620px;margin:12px auto 0">Seven intelligence modules turn hours of scattered research into a single, structured prep dashboard.</p></div><div class="grid grid-3">'+feat+'</div></section>'+
+   '<section class="container" style="padding:48px 24px 70px"><div class="flex between items-center mb-24 wrap" style="gap:12px"><div><div class="eyebrow">Start here</div><h2 style="font-size:28px;margin-top:8px">Popular companies</h2></div><span class="muted" style="font-size:14px">Click any company to open its full dashboard →</span></div><div class="grid grid-4">'+pop+'</div></section>'+
+   '<section class="container" style="padding-bottom:70px"><div class="card card-pad" style="background:var(--navy-grad);color:#fff;text-align:center;padding:48px"><h2 style="font-size:28px">Walk into your next interview prepared</h2><p style="color:#c6d6f0;max-width:560px;margin:12px auto 22px">Search any company above, or open a sample dashboard to see everything Placement Bible gives you.</p><button class="btn btn-light" onclick="go(\'/company/amazon\')">Open sample dashboard '+ico('arrow',18)+'</button></div></section>'+
+   '</div>'+footer();
+}
+
+/* ---------------- COMPANY DASHBOARD ---------------- */
+var current=null;        // resolved company
+var ckey='';             // checklist localStorage key
+var checked=[];          // checklist booleans
+var faqTab='hr';
+var accOpen=0;
+var coachLog=[];
+
+function secHead(num,title,sub){return '<div class="section-head"><span class="section-num">'+num+'</span><div><div class="section-title">'+title+'</div>'+(sub?'<div class="section-sub">'+sub+'</div>':'')+'</div></div>';}
+
+function pct(){return Math.round((checked.filter(Boolean).length/checked.length)*100);}
+
+function renderCompany(slug){
+  current=resolveCompany(slug);var c=current;
+  ckey='pb_checklist_'+c.slug;
+  checked=lsGet(ckey,c.checklist.map(function(){return false;}));
+  if(!Array.isArray(checked)||checked.length!==c.checklist.length)checked=c.checklist.map(function(){return false;});
+  faqTab='hr';accOpen=0;
+  coachLog=[{from:'bot',text:"Hi! I'm your AI Placement Coach for "+c.name+". Ask me anything about preparing for this company — or tap a suggestion below."}];
+
+  var nav=[['overview','Overview'],['business','Business Model'],['placement','Placement'],['interview','Interview Process'],['faq','FAQs'],['swot','SWOT'],['competitors','Competitors'],['industry','Industry'],['checklist','Readiness'],['coach','AI Coach']];
+  var navHTML=nav.map(function(p){return '<a href="#'+p[0]+'">'+p[1]+'</a>';}).join('')+'<div style="margin-top:16px">'+searchBoxHTML('dash-search')+'</div>';
+
+  var genBanner=c.generated?'<div class="container" style="padding-top:16px"><div class="card card-pad" style="background:var(--amber-bg);border-color:#f7ddb4;display:flex;gap:12px"><span style="color:var(--amber);flex:none;margin-top:2px">'+ico('bulb',20)+'</span><p style="font-size:14px"><b>“'+esc(c.name)+'” isn’t in our curated database yet</b>, so this is an auto-generated starter dashboard built from a smart template. The structure and prep guidance are ready to use — fill in the company-specific blanks from the official careers page, or add it permanently via the <a onclick="go(\'/admin\')" style="color:var(--blue-600);font-weight:600;cursor:pointer">Admin panel</a>.</p></div></div>':'';
+
+  var html=navbar()+'<div class="fade-in">'+
+    '<div class="dash-hero"><div class="container dash-hero-inner">'+
+    '<div class="logo-badge" style="color:'+c.color+'">'+esc(c.logo)+'</div>'+
+    '<div style="flex:1;min-width:240px"><div class="flex items-center gap-12 wrap"><h1 style="font-size:30px;color:#fff">'+esc(c.name)+'</h1><span class="pill" style="background:rgba(255,255,255,.14);color:#cfe0ff">'+c.archetypeLabel+'</span>'+(c.generated?'<span class="pill" style="background:rgba(245,158,11,.18);color:#fde0a3">'+ico('bulb',13)+' Auto-generated</span>':'')+'</div>'+
+    '<div class="dash-meta"><span>'+ico('building',14)+' '+esc(c.industry)+'</span><span>'+ico('globe',14)+' '+esc(c.hq)+'</span><span>'+ico('users',14)+' '+esc(c.employees)+'</span></div></div>'+
+    '<div class="center" style="color:#fff" id="hero-ring">'+ring(pct(),104,10,true)+'</div>'+
+    '</div></div>'+genBanner+
+    '<div class="container"><div class="dash-layout"><aside class="dash-nav">'+navHTML+'</aside><main>'+
+    secOverview(c)+secBusiness(c)+secPlacement(c)+secInterview(c)+secFaq(c)+secSwot(c)+secCompetitors(c)+secIndustry(c)+secChecklist(c)+secCoach(c)+
+    '</main></div></div></div>'+footer();
+  return html;
+}
+
+function secOverview(c){
+  var rows=[['Industry',c.industry],['Headquarters',c.hq],['Employees',c.employees],['Global Presence',c.presence],['Founded',c.founded||'—']];
+  return '<section id="overview" class="section">'+secHead('1','Company Overview','The essentials at a glance')+
+   '<div class="grid grid-2"><div class="card card-pad"><p style="font-size:15.5px;line-height:1.65">'+esc(c.description)+'</p><div class="mt-16"><div class="kpi-label" style="margin-bottom:8px">Business Segments</div><div>'+c.segments.map(function(s){return '<span class="tag">'+esc(s)+'</span>';}).join('')+'</div></div></div>'+
+   '<div class="card card-pad"><div class="kv">'+rows.map(function(r){return '<div class="kv-row"><span class="kv-key">'+esc(r[0])+'</span><span class="kv-val">'+esc(r[1])+'</span></div>';}).join('')+'</div></div></div></section>';
+}
+function secBusiness(c){
+  var b=c.business;var blocks=[['rupee','Revenue Streams',b.revenueStreams],['briefcase','Products & Services',b.products],['users','Key Customers',b.customers]];
+  return '<section id="business" class="section">'+secHead('2','Business Model','How the company creates and captures value')+
+   '<div class="card card-pad mb-16" style="background:var(--blue-50);border-color:#cfe0fb"><div class="kpi-label" style="color:var(--blue-600)">Value Proposition</div><p style="font-size:16px;font-weight:500;margin-top:6px">'+esc(b.valueProp)+'</p></div>'+
+   '<div class="grid grid-3">'+blocks.map(function(bl){return '<div class="card card-pad"><div class="flex items-center gap-8 mb-16"><span class="feature-ico" style="width:36px;height:36px;margin:0;background:var(--surface-2);color:var(--blue-600)">'+ico(bl[0],18)+'</span><h3 style="font-size:16px">'+bl[1]+'</h3></div><ul style="margin:0;padding-left:18px;font-size:14.5px;line-height:1.7">'+bl[2].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>';}).join('')+'</div></section>';
+}
+function secPlacement(c){
+  return '<section id="placement" class="section">'+secHead('3','Placement Snapshot','What to expect on campus')+
+   '<div class="grid grid-4 mb-16">'+
+   '<div class="card kpi"><div class="kpi-label">Expected Salary</div><div class="kpi-value" style="font-size:19px">'+esc(c.salaryRange.split('(')[0])+'</div><div class="kpi-foot">Per annum (campus)</div></div>'+
+   '<div class="card kpi"><div class="kpi-label">Common Roles</div><div class="kpi-value">'+c.roles.length+'</div><div class="kpi-foot">Role tracks offered</div></div>'+
+   '<div class="card kpi"><div class="kpi-label">Archetype</div><div class="kpi-value" style="font-size:19px">'+c.archetypeLabel+'</div><div class="kpi-foot">Hiring pattern</div></div>'+
+   '<div class="card kpi"><div class="kpi-label">Key Skills</div><div class="kpi-value">'+c.skills.length+'</div><div class="kpi-foot">To prepare</div></div></div>'+
+   '<div class="grid grid-2"><div class="card card-pad"><h3 style="font-size:16px;margin-bottom:12px">Common Roles Offered</h3><ul style="margin:0;padding-left:18px;line-height:1.8;font-size:14.5px">'+c.roles.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul><h3 style="font-size:16px;margin:18px 0 10px">Important Skills</h3><div>'+c.skills.map(function(s){return '<span class="tag">'+esc(s)+'</span>';}).join('')+'</div></div>'+
+   '<div class="card card-pad"><h3 style="font-size:16px;margin-bottom:12px">Eligibility Criteria</h3><p class="muted" style="font-size:14.5px">'+esc(c.eligibility)+'</p><h3 style="font-size:16px;margin:18px 0 8px">Expected Salary Range</h3><p style="font-weight:600">'+esc(c.salaryRange)+'</p><h3 style="font-size:16px;margin:18px 0 8px">Hiring Timeline</h3><p class="muted" style="font-size:14.5px">'+esc(c.hiringTimeline)+'</p></div></div></section>';
+}
+function interviewItems(c){
+  return c.interview.map(function(r,i){var open=accOpen===i;
+    return '<div class="acc-item'+(open?' open':'')+'"><div class="acc-head" onclick="toggleAcc('+i+')"><span class="acc-step">'+(i+1)+'</span><span class="acc-title">'+esc(r.stage)+'</span><span class="acc-chev">'+ico('chevron',20)+'</span></div>'+
+    (open?'<div class="acc-body fade-in"><p class="muted" style="font-size:14.5px">'+esc(r.desc)+'</p><h5>Preparation Tips</h5><ul>'+r.tips.map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul><h5>Sample Questions</h5><ul>'+r.questions.map(function(q){return '<li>'+esc(q)+'</li>';}).join('')+'</ul></div>':'')+'</div>';
+  }).join('');
+}
+function secInterview(c){
+  return '<section id="interview" class="section">'+secHead('4','Interview Process','Stage-by-stage, with tips and sample questions')+'<div id="acc-wrap">'+interviewItems(c)+'</div></section>';
+}
+function secFaq(c){
+  var tabs=[['hr','HR Questions'],['technical','Technical Questions'],['case','Case Questions'],['behavioral','Behavioral Questions']];
+  var tabHTML=tabs.map(function(t){return '<button class="tab'+(faqTab===t[0]?' active':'')+'" onclick="setFaq(\''+t[0]+'\')">'+t[1]+'</button>';}).join('');
+  var items=(c.faqs[faqTab]||[]);var list=items.length?items.map(function(q){return '<div class="qa"><b>'+esc(q)+'</b></div>';}).join(''):'<p class="muted">No questions in this category yet.</p>';
+  return '<section id="faq" class="section">'+secHead('5','Frequently Asked Interview Questions','Categorised by round type')+'<div class="tabs">'+tabHTML+'</div><div id="faq-list" class="fade-in">'+list+'</div></section>';
+}
+function secSwot(c){
+  var s=c.swot;var boxes=[['swot-s','shield','Strengths',s.strengths,'var(--green)'],['swot-w','target','Weaknesses',s.weaknesses,'var(--red)'],['swot-o','spark','Opportunities',s.opportunities,'var(--blue-600)'],['swot-t','swords','Threats',s.threats,'var(--amber)']];
+  return '<section id="swot" class="section">'+secHead('6','SWOT Analysis','Strengths, weaknesses, opportunities and threats')+'<div class="swot">'+boxes.map(function(b){return '<div class="swot-box '+b[0]+'"><h4 style="color:'+b[4]+'">'+ico(b[1],18)+' '+b[2]+'</h4><ul>'+b[3].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>';}).join('')+'</div></section>';
+}
+function secCompetitors(c){
+  return '<section id="competitors" class="section">'+secHead('7','Competitor Analysis','Who they compete with and how they differ')+'<div class="grid grid-2">'+c.competitors.map(function(x){return '<div class="card card-pad card-hover comp-card"><div class="flex between items-center"><h4>'+esc(x.name)+'</h4><span style="color:var(--faint)">'+ico('swords',18)+'</span></div><div class="comp-pos">'+esc(x.position)+'</div><p class="muted" style="font-size:14.5px">'+esc(x.diff)+'</p></div>';}).join('')+'</div></section>';
+}
+function secIndustry(c){
+  var ind=c.industryIntel;
+  return '<section id="industry" class="section">'+secHead('8','Industry Intelligence','The sector context you can quote in interviews')+
+   '<div class="grid grid-4 mb-16">'+ind.kpis.map(function(k){return '<div class="card kpi"><div class="kpi-label">'+esc(k.label)+'</div><div class="kpi-value">'+esc(k.value)+'</div><div class="kpi-foot">'+esc(k.foot)+'</div></div>';}).join('')+'</div>'+
+   '<div class="grid grid-2"><div class="card card-pad"><h3 style="font-size:16px;margin-bottom:8px">Industry Overview</h3><p class="muted" style="font-size:14.5px">'+esc(ind.overview)+'</p><h3 style="font-size:16px;margin:18px 0 8px">Future Outlook</h3><p class="muted" style="font-size:14.5px">'+esc(ind.outlook)+'</p></div>'+
+   '<div class="card card-pad"><h3 style="font-size:16px;margin-bottom:12px">Current Trends</h3><ul style="margin:0;padding-left:0;list-style:none">'+ind.trends.map(function(t){return '<li class="flex items-center gap-12" style="padding:9px 0;border-bottom:1px dashed var(--border)"><span style="color:var(--blue-600)">'+ico('arrow',16)+'</span><span style="font-size:14.5px">'+esc(t)+'</span></li>';}).join('')+'</ul></div></div></section>';
+}
+function secChecklist(c){
+  var done=checked.filter(Boolean).length,p=pct();
+  var items=c.checklist.map(function(label,i){return '<li class="check-item'+(checked[i]?' done':'')+'" onclick="toggleCheck('+i+')"><span class="check-box">'+(checked[i]?ico('check',14,3):'')+'</span><span class="check-label" style="font-weight:500">'+esc(label)+'</span></li>';}).join('');
+  var msg=p===100?'You’re fully prepared. Go ace it! 🎯':p>=50?'Good progress — keep going.':'Just getting started. Work through the list.';
+  return '<section id="checklist" class="section">'+secHead('9','Placement Readiness Checklist','Tick items off to grow your readiness score')+
+   '<div class="grid" style="grid-template-columns:1fr 280px;gap:18px"><div class="card card-pad"><ul class="checklist">'+items+'</ul></div>'+
+   '<div class="card card-pad center" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px"><div id="check-ring">'+ring(p)+'</div><div><div style="font-weight:700" id="check-count">'+done+' of '+c.checklist.length+' complete</div><p class="muted" style="font-size:13.5px;margin-top:4px" id="check-msg">'+msg+'</p></div><div class="progress" style="width:100%"><span id="check-bar" style="width:'+p+'%"></span></div></div></div></section>';
+}
+function secCoach(c){
+  var logHTML=coachLog.map(function(m){return '<div class="msg '+m.from+'">'+esc(m.text)+'</div>';}).join('');
+  var chips=SUGGESTIONS.map(function(s){return '<button class="chip" onclick="coachAsk(this.textContent)">'+s+'</button>';}).join('');
+  return '<section id="coach" class="section">'+secHead('10','AI Placement Coach','Contextual answers built from this company’s data')+
+   '<div class="card" style="overflow:hidden"><div class="coach"><div class="coach-log" id="coach-log">'+logHTML+'</div><div class="coach-suggest">'+chips+'</div>'+
+   '<form class="coach-input" onsubmit="coachSubmit(event)"><input id="coach-input" placeholder="Ask anything about '+esc(c.name)+'…" autocomplete="off"/><button class="btn btn-primary" type="submit">'+ico('send',16)+'</button></form></div></div>'+
+   '<p class="muted" style="font-size:12.5px;margin-top:10px">The coach answers offline from this dashboard’s data — no internet or API key needed.</p></section>';
+}
+
+/* ---- Dashboard interactions ---- */
+function toggleAcc(i){accOpen=accOpen===i?-1:i;document.getElementById('acc-wrap').innerHTML=interviewItems(current);}
+function setFaq(t){faqTab=t;
+  document.querySelectorAll('#faq .tab').forEach(function(b){b.classList.toggle('active',b.textContent.toLowerCase().indexOf(t==='hr'?'hr':t)>=0);});
+  var items=(current.faqs[t]||[]);document.getElementById('faq-list').innerHTML=items.length?items.map(function(q){return '<div class="qa"><b>'+esc(q)+'</b></div>';}).join(''):'<p class="muted">No questions in this category yet.</p>';
+}
+function toggleCheck(i){checked[i]=!checked[i];lsSet(ckey,checked);
+  document.querySelectorAll('#checklist .check-item').forEach(function(li,idx){li.classList.toggle('done',!!checked[idx]);li.querySelector('.check-box').innerHTML=checked[idx]?ico('check',14,3):'';});
+  var p=pct(),done=checked.filter(Boolean).length;
+  document.getElementById('check-ring').innerHTML=ring(p);
+  document.getElementById('hero-ring').innerHTML=ring(p,104,10,true);
+  document.getElementById('check-bar').style.width=p+'%';
+  document.getElementById('check-count').textContent=done+' of '+checked.length+' complete';
+  document.getElementById('check-msg').textContent=p===100?'You’re fully prepared. Go ace it! 🎯':p>=50?'Good progress — keep going.':'Just getting started. Work through the list.';
+}
+function coachAsk(text){if(!text||!text.trim())return;coachLog.push({from:'user',text:text});coachLog.push({from:'bot',text:coachReply(current,text)});
+  var log=document.getElementById('coach-log');log.innerHTML=coachLog.map(function(m){return '<div class="msg '+m.from+'">'+esc(m.text)+'</div>';}).join('');log.scrollTop=log.scrollHeight;}
+function coachSubmit(e){e.preventDefault();var inp=document.getElementById('coach-input');coachAsk(inp.value);inp.value='';}
+
+/* ---------------- ADMIN ---------------- */
+var adminTab='companies';
+function renderAdmin(){
+  var tabs=[['companies','Companies','building'],['experiences','Interview Experiences','doc'],['questions','Placement Questions','list'],['users','Users','users'],['analytics','Analytics','chart']];
+  var tabHTML=tabs.map(function(t){return '<button class="admin-tab'+(adminTab===t[0]?' active':'')+'" onclick="setAdmin(\''+t[0]+'\')"><span class="flex items-center gap-8">'+ico(t[2],15)+' '+t[1]+'</span></button>';}).join('');
+  return navbar()+'<div class="container fade-in" style="padding:34px 24px 80px">'+
+   '<div class="flex between items-center wrap mb-24" style="gap:12px"><div><div class="eyebrow">Control Center</div><h1 style="font-size:30px;margin-top:6px">Admin Panel</h1><p class="muted" style="font-size:14.5px;margin-top:4px">Manage companies, experiences, questions and users. All data is saved locally in your browser.</p></div><button class="btn btn-ghost btn-sm" onclick="go(\'/\')">'+ico('arrow',15)+' Back to site</button></div>'+
+   '<div class="admin-tabs">'+tabHTML+'</div><div id="admin-body">'+adminBody()+'</div></div>'+footer();
+}
+function adminBody(){
+  if(adminTab==='companies')return adminCompanies();
+  if(adminTab==='experiences')return adminExperiences();
+  if(adminTab==='questions')return adminQuestions();
+  if(adminTab==='users')return adminUsers();
+  return adminAnalytics();
+}
+function setAdmin(t){adminTab=t;document.getElementById('admin-body').innerHTML=adminBody();}
+
+function adminCompanies(){
+  var admin=getAdminCompanies();var curated=Object.keys(companies).map(function(k){return companies[k];});var added=Object.keys(admin).map(function(k){return admin[k];});
+  var typeOpts=Object.keys(archetypes).map(function(k){return '<option value="'+k+'">'+archetypes[k].label+'</option>';}).join('');
+  var addedRows=added.map(function(c){return '<tr><td><a onclick="go(\'/company/'+c.slug+'\')" style="font-weight:600;color:var(--blue-600);cursor:pointer">'+esc(c.name)+'</a></td><td class="muted">'+esc(c.industry)+'</td><td><span class="pill" style="background:var(--green-bg);color:var(--green)">Added</span></td><td><button class="btn btn-ghost btn-sm" onclick="removeCompany(\''+c.slug+'\')">'+ico('trash',14)+'</button></td></tr>';}).join('');
+  var curatedRows=curated.map(function(c){return '<tr><td><a onclick="go(\'/company/'+c.slug+'\')" style="font-weight:600;color:var(--blue-600);cursor:pointer">'+esc(c.name)+'</a></td><td class="muted">'+esc(c.industry)+'</td><td><span class="pill pill-soft">Curated</span></td><td><span class="muted" style="font-size:12px">built-in</span></td></tr>';}).join('');
+  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
+   '<form class="card card-pad" onsubmit="addCompany(event)"><h3 style="font-size:17px;margin-bottom:16px">Add a company</h3>'+
+   '<div class="field"><label>Company name *</label><input id="co-name" placeholder="e.g. Zomato"/></div>'+
+   '<div class="field"><label>Type (archetype)</label><select id="co-type">'+typeOpts+'</select></div>'+
+   '<div class="field"><label>Industry</label><input id="co-industry" placeholder="e.g. Food-tech"/></div>'+
+   '<div class="grid grid-2" style="gap:12px"><div class="field"><label>Headquarters</label><input id="co-hq" placeholder="Gurugram"/></div><div class="field"><label>Employees</label><input id="co-emp" placeholder="~5,000"/></div></div>'+
+   '<div class="field"><label>Salary range</label><input id="co-salary" placeholder="₹8–14 LPA"/></div>'+
+   '<div class="field"><label>Segments (comma separated)</label><input id="co-seg" placeholder="Delivery, Dining, Quick-commerce"/></div>'+
+   '<div class="field"><label>Value proposition</label><input id="co-vp" placeholder="One-line value prop"/></div>'+
+   '<div class="field"><label>Description</label><textarea id="co-desc" rows="3" placeholder="Short company description"></textarea></div>'+
+   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Save company</button>'+
+   '<p class="muted" style="font-size:12.5px;margin-top:10px">Interview rounds, FAQs and skills are auto-filled from the chosen archetype.</p></form>'+
+   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Company directory <span class="muted" style="font-weight:400">('+(curated.length+added.length)+')</span></h3>'+
+   '<table class="table"><thead><tr><th>Company</th><th>Industry</th><th>Source</th><th></th></tr></thead><tbody>'+addedRows+curatedRows+'</tbody></table></div></div>';
+}
+function addCompany(e){e.preventDefault();var name=document.getElementById('co-name').value;if(!name.trim())return;
+  var seg=document.getElementById('co-seg').value;
+  saveAdminCompany({name:name,type:document.getElementById('co-type').value,industry:document.getElementById('co-industry').value||'Industry',hq:document.getElementById('co-hq').value||'—',employees:document.getElementById('co-emp').value||'—',presence:'—',
+    salaryRange:document.getElementById('co-salary').value||undefined,segments:seg?seg.split(',').map(function(s){return s.trim();}).filter(Boolean):['Core segment'],
+    description:document.getElementById('co-desc').value||(name+' company profile.'),logo:name.trim().slice(0,2).toUpperCase(),color:'#2563eb',
+    business:{revenueStreams:['Primary revenue'],products:['Core product'],customers:['Customers'],valueProp:document.getElementById('co-vp').value||(name+'’s value proposition.')},
+    swot:{strengths:['Strength'],weaknesses:['Weakness'],opportunities:['Opportunity'],threats:['Threat']},competitors:[{name:'Competitor',position:'Rival',diff:'How it differs.'}]});
+  document.getElementById('admin-body').innerHTML=adminBody();
+}
+function removeCompany(s){deleteAdminCompany(s);document.getElementById('admin-body').innerHTML=adminBody();}
+
+function adminExperiences(){
+  var items=lsGet('pb_experiences',[]);
+  var list=items.length?items.map(function(i){var vc=i.verdict==='Selected'?'background:var(--green-bg);color:var(--green)':i.verdict==='Rejected'?'background:var(--red-bg);color:var(--red)':'background:var(--blue-50);color:var(--blue-600)';
+    return '<div class="card card-pad mb-16" style="box-shadow:none"><div class="flex between items-center wrap" style="gap:8px"><div class="flex items-center gap-8 wrap"><b>'+esc(i.company)+'</b><span class="pill pill-soft">'+esc(i.role||'Role')+'</span><span class="pill pill-soft">'+esc(i.year)+'</span><span class="pill" style="'+vc+'">'+esc(i.verdict)+'</span></div><button class="btn btn-ghost btn-sm" onclick="delItem(\'pb_experiences\','+i.id+')">'+ico('trash',14)+'</button></div><p class="muted" style="font-size:14px;margin-top:10px;white-space:pre-line">'+esc(i.text)+'</p></div>';}).join(''):'<p class="muted">No experiences yet. Add one from the form.</p>';
+  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
+   '<form class="card card-pad" onsubmit="addExp(event)"><h3 style="font-size:17px;margin-bottom:16px">Upload an interview experience</h3>'+
+   '<div class="field"><label>Company *</label><input id="ex-co" placeholder="Infosys"/></div>'+
+   '<div class="grid grid-2" style="gap:12px"><div class="field"><label>Role</label><input id="ex-role" placeholder="Systems Engineer"/></div><div class="field"><label>Year</label><input id="ex-year" value="2026"/></div></div>'+
+   '<div class="field"><label>Verdict</label><select id="ex-verdict"><option>Selected</option><option>Rejected</option><option>In process</option></select></div>'+
+   '<div class="field"><label>Experience *</label><textarea id="ex-text" rows="5" placeholder="Round-by-round account…"></textarea></div>'+
+   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Publish experience</button></form>'+
+   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Submitted experiences <span class="muted" style="font-weight:400">('+items.length+')</span></h3>'+list+'</div></div>';
+}
+function addExp(e){e.preventDefault();var co=document.getElementById('ex-co').value,text=document.getElementById('ex-text').value;if(!co.trim()||!text.trim())return;
+  var items=lsGet('pb_experiences',[]);items.unshift({id:Date.now(),company:co,role:document.getElementById('ex-role').value,year:document.getElementById('ex-year').value,verdict:document.getElementById('ex-verdict').value,text:text});
+  lsSet('pb_experiences',items);document.getElementById('admin-body').innerHTML=adminBody();}
+
+function adminQuestions(){
+  var items=lsGet('pb_questions',[]);
+  var rows=items.length?items.map(function(i){return '<tr><td>'+esc(i.question)+'</td><td class="muted">'+esc(i.company||'—')+'</td><td><span class="pill pill-soft">'+esc(i.category)+'</span></td><td><button class="btn btn-ghost btn-sm" onclick="delItem(\'pb_questions\','+i.id+')">'+ico('trash',14)+'</button></td></tr>';}).join(''):'<tr><td colspan="4" class="muted">No questions added yet.</td></tr>';
+  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
+   '<form class="card card-pad" onsubmit="addQ(event)"><h3 style="font-size:17px;margin-bottom:16px">Add a placement question</h3>'+
+   '<div class="field"><label>Company</label><input id="q-co" placeholder="Amazon"/></div>'+
+   '<div class="field"><label>Category</label><select id="q-cat"><option>HR</option><option>Technical</option><option>Case</option><option>Behavioral</option></select></div>'+
+   '<div class="field"><label>Question *</label><textarea id="q-text" rows="3" placeholder="Type the question…"></textarea></div>'+
+   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Add question</button></form>'+
+   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Question bank <span class="muted" style="font-weight:400">('+items.length+')</span></h3><table class="table"><thead><tr><th>Question</th><th>Company</th><th>Category</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
+}
+function addQ(e){e.preventDefault();var text=document.getElementById('q-text').value;if(!text.trim())return;
+  var items=lsGet('pb_questions',[]);items.unshift({id:Date.now(),company:document.getElementById('q-co').value,category:document.getElementById('q-cat').value,question:text});
+  lsSet('pb_questions',items);document.getElementById('admin-body').innerHTML=adminBody();}
+
+function adminUsers(){
+  var items=lsGet('pb_users',[{id:1,name:'Demo Student',email:'demo@college.edu',college:'IIT',role:'Student'}]);
+  var rows=items.map(function(i){return '<tr><td style="font-weight:600">'+esc(i.name)+'</td><td class="muted">'+esc(i.email||'—')+'</td><td class="muted">'+esc(i.college||'—')+'</td><td><span class="pill pill-soft">'+esc(i.role)+'</span></td><td><button class="btn btn-ghost btn-sm" onclick="delItem(\'pb_users\','+i.id+')">'+ico('trash',14)+'</button></td></tr>';}).join('');
+  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
+   '<form class="card card-pad" onsubmit="addUser(event)"><h3 style="font-size:17px;margin-bottom:16px">Add a user</h3>'+
+   '<div class="field"><label>Name *</label><input id="u-name" placeholder="Student name"/></div>'+
+   '<div class="field"><label>Email</label><input id="u-email" placeholder="name@college.edu"/></div>'+
+   '<div class="field"><label>College</label><input id="u-college" placeholder="College / University"/></div>'+
+   '<div class="field"><label>Role</label><select id="u-role"><option>Student</option><option>Placement Coordinator</option><option>Admin</option></select></div>'+
+   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Add user</button></form>'+
+   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Users <span class="muted" style="font-weight:400">('+items.length+')</span></h3><table class="table"><thead><tr><th>Name</th><th>Email</th><th>College</th><th>Role</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
+}
+function addUser(e){e.preventDefault();var name=document.getElementById('u-name').value;if(!name.trim())return;
+  var items=lsGet('pb_users',[{id:1,name:'Demo Student',email:'demo@college.edu',college:'IIT',role:'Student'}]);
+  items.unshift({id:Date.now(),name:name,email:document.getElementById('u-email').value,college:document.getElementById('u-college').value,role:document.getElementById('u-role').value});
+  lsSet('pb_users',items);document.getElementById('admin-body').innerHTML=adminBody();}
+
+function delItem(key,id){var items=lsGet(key,[]);lsSet(key,items.filter(function(i){return i.id!==id;}));document.getElementById('admin-body').innerHTML=adminBody();}
+
+function adminAnalytics(){
+  var admin=getAdminCompanies();var experiences=lsGet('pb_experiences',[]);var questions=lsGet('pb_questions',[]);var users=lsGet('pb_users',[{id:1}]);
+  var all=Object.assign({},companies,admin);var total=Object.keys(all).length;
+  var byType={};Object.keys(all).forEach(function(k){var t=(archetypes[all[k].type]||{}).label||'Other';byType[t]=(byType[t]||0)+1;});
+  var max=Math.max.apply(null,[1].concat(Object.keys(byType).map(function(k){return byType[k];})));
+  var stats=[['Companies',total,Object.keys(admin).length+' added by admin'],['Interview Experiences',experiences.length,'Submitted'],['Questions in Bank',questions.length,'Across categories'],['Registered Users',users.length,'In the platform']];
+  var statHTML=stats.map(function(s){return '<div class="card kpi"><div class="kpi-label">'+s[0]+'</div><div class="kpi-value">'+s[1]+'</div><div class="kpi-foot">'+s[2]+'</div></div>';}).join('');
+  var bars=Object.keys(byType).map(function(k){return '<div style="margin-bottom:14px"><div class="flex between" style="font-size:13.5px;margin-bottom:6px"><span>'+k+'</span><b>'+byType[k]+'</b></div><div class="progress"><span style="width:'+(byType[k]/max*100)+'%"></span></div></div>';}).join('');
+  return '<div class="fade-in"><div class="grid grid-4 mb-24">'+statHTML+'</div>'+
+   '<div class="grid grid-2"><div class="card card-pad"><h3 style="font-size:16px;margin-bottom:16px">Companies by archetype</h3>'+bars+'</div>'+
+   '<div class="card card-pad"><h3 style="font-size:16px;margin-bottom:10px">Platform health</h3><div class="kv">'+
+   '<div class="kv-row"><span class="kv-key">Curated companies</span><span class="kv-val">'+Object.keys(companies).length+'</span></div>'+
+   '<div class="kv-row"><span class="kv-key">Admin-added companies</span><span class="kv-val">'+Object.keys(admin).length+'</span></div>'+
+   '<div class="kv-row"><span class="kv-key">Content items (Q + experiences)</span><span class="kv-val">'+(questions.length+experiences.length)+'</span></div>'+
+   '<div class="kv-row"><span class="kv-key">Avg. questions / company</span><span class="kv-val">'+(questions.length/total).toFixed(1)+'</span></div></div>'+
+   '<p class="muted" style="font-size:12.5px;margin-top:14px">Analytics are computed live from locally stored data. Connect a backend later for cross-device, multi-user analytics.</p></div></div></div>';
+}
+
+/* ---------------- Router ---------------- */
+function go(path){location.hash='#'+path;}
+function router(){
+  var hash=location.hash.replace(/^#/,'')||'/';
+  var app=document.getElementById('app');window.scrollTo(0,0);
+  var m=hash.match(/^\/company\/(.+)$/);
+  if(m){app.innerHTML=renderCompany(decodeURIComponent(m[1]));
+    setTimeout(function(){var log=document.getElementById('coach-log');if(log)log.scrollTop=log.scrollHeight;},0);return;}
+  if(hash.indexOf('/admin')===0){adminTab='companies';app.innerHTML=renderAdmin();return;}
+  app.innerHTML=renderHome();
+}
+window.addEventListener('hashchange',router);
+router();
+</script>
+</body>
+</html>
