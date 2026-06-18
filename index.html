@@ -70,7 +70,7 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
 .feature-ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px}
 .feature h3{font-size:17px;margin-bottom:6px}.feature p{color:var(--muted);font-size:14px}
 .dash-hero{background:var(--navy-grad);color:#fff}.dash-hero-inner{padding:34px 24px 30px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.logo-badge{width:76px;height:76px;border-radius:18px;background:#fff;display:grid;place-items:center;font-size:30px;font-weight:800;flex:none;box-shadow:var(--shadow)}
+.logo-badge{width:76px;height:76px;border-radius:18px;background:#fff;display:grid;place-items:center;font-size:30px;font-weight:800;flex:none;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .dash-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;color:#dbe2fe;font-size:14px}
 .dash-layout{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:start;padding:30px 0 80px}
 .dash-nav{position:sticky;top:82px;min-width:0}.dash-nav a{display:block;padding:9px 12px;border-radius:9px;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer}
@@ -127,7 +127,7 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
 .suggest-box{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:40;padding:6px;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-lg);text-align:left}
 .suggest-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:transparent;border:none;padding:10px 12px;border-radius:10px;cursor:pointer}
 .suggest-row:hover{background:var(--surface-2)}
-.logo-sq{border-radius:9px;color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.logo-sq{border-radius:9px;color:#fff;display:grid;place-items:center;font-weight:800;flex:none;position:relative;overflow:hidden}
 </style>
 </head>
 <body>
@@ -814,6 +814,28 @@ paytm:{slug:'paytm',name:'Paytm (One97)',logo:'Pt',color:'#00baf2',type:'product
  industryIntel:{overview:'India’s digital-payments market is huge and UPI-led but hard to monetise directly; Paytm monetises via merchant devices and financial-services distribution.',trends:['Merchant payments & devices','Financial-services distribution','UPI ubiquity','Regulatory tightening'],outlook:'Merchant monetisation and lending distribution drive the path to profitability; regulation is the key swing factor.',kpis:[{label:'Merchants',value:'Large base',foot:'QR + Soundbox'},{label:'Payments',value:'Major',foot:'Brand recall'},{label:'Lending',value:'Distribution',foot:'FS revenue'},{label:'Focus',value:'Profitability',foot:'Cost discipline'}]}}
 };
 
+/* ---------------- Company logos (CDN with initials fallback) ---------------- */
+var LOGO_DOMAINS={
+  infosys:'infosys.com',tcs:'tcs.com',wipro:'wipro.com',accenture:'accenture.com',amazon:'amazon.com',google:'google.com',microsoft:'microsoft.com',deloitte:'deloitte.com',nestle:'nestle.com',unilever:'unilever.com',itc:'itcportal.com',
+  hcltech:'hcltech.com',techmahindra:'techmahindra.com',cognizant:'cognizant.com',capgemini:'capgemini.com',ltimindtree:'ltimindtree.com',
+  ibm:'ibm.com',oracle:'oracle.com',sap:'sap.com',adobe:'adobe.com',apple:'apple.com',meta:'meta.com',samsung:'samsung.com',intel:'intel.com',qualcomm:'qualcomm.com',nvidia:'nvidia.com',cisco:'cisco.com',flipkart:'flipkart.com',swiggy:'swiggy.com',zomato:'zomato.com',paytm:'paytm.com',
+  hdfcbank:'hdfcbank.com',icicibank:'icicibank.com',sbi:'sbi.co.in',axisbank:'axisbank.com',kotak:'kotak.com',bajajfinserv:'bajajfinserv.in','goldman-sachs':'goldmansachs.com',jpmorgan:'jpmorganchase.com',
+  'tata-motors':'tatamotors.com','maruti-suzuki':'marutisuzuki.com',mahindra:'mahindra.com','bajaj-auto':'bajajauto.com','hero-motocorp':'heromotocorp.com','tata-steel':'tatasteel.com','jsw-steel':'jswsteel.in',
+  'larsen-toubro':'larsentoubro.com',siemens:'siemens.com',bhel:'bhel.com',abb:'abb.com',bosch:'bosch.com',cummins:'cummins.com',
+  reliance:'ril.com',ongc:'ongcindia.com','indian-oil':'iocl.com',ntpc:'ntpc.co.in',adani:'adani.com',
+  'sun-pharma':'sunpharma.com','dr-reddys':'drreddys.com',cipla:'cipla.com',biocon:'biocon.com',
+  pwc:'pwc.com',ey:'ey.com',kpmg:'kpmg.com',mckinsey:'mckinsey.com',bcg:'bcg.com',bain:'bain.com','zs-associates':'zs.com',
+  'procter-gamble':'pg.com',britannia:'britannia.co.in',dabur:'dabur.com',marico:'marico.com','asian-paints':'asianpaints.com'
+};
+// Real logo overlaid on the colored initials badge. Tries the logo CDN, then a
+// favicon fallback, then removes itself so the initials show — always graceful.
+function logoErr(img){ if(img.dataset.fb){ img.src=img.dataset.fb; img.removeAttribute('data-fb'); } else { img.remove(); } }
+function companyLogoImg(c){
+  var d=(c&&(LOGO_DOMAINS[c.slug]||c.domain))||'';
+  if(!d)return'';
+  return '<img src="https://logo.clearbit.com/'+d+'?size=128" alt="" loading="lazy" referrerpolicy="no-referrer" data-fb="https://www.google.com/s2/favicons?sz=128&domain='+d+'" onload="this.style.opacity=1" onerror="logoErr(this)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:16%;background:#fff;border-radius:inherit;opacity:0;transition:opacity .25s">';
+}
+
 /* ---------------- Store / resolver ---------------- */
 var ADMIN_KEY='pb_admin_companies';
 function slugify(n){return (n||'').toString().trim().toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
@@ -921,7 +943,7 @@ function searchBoxHTML(id){return '<div style="position:relative"><form class="s
 function renderSuggest(id){
   var inp=document.getElementById(id);if(!inp)return;var box=document.getElementById(id+'-suggest');var sug=searchSuggestions(inp.value);
   if(!sug.length){box.innerHTML='';return;}
-  box.innerHTML='<div class="suggest-box">'+sug.map(function(s){return '<button type="button" class="suggest-row" onclick="go(\'/company/'+s.slug+'\')"><span class="logo-sq" style="width:36px;height:36px;font-size:14px;background:'+s.color+'">'+esc(s.logo)+'</span><span><span style="display:block;font-weight:600">'+esc(s.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(s.industry)+'</span></span></button>';}).join('')+'</div>';
+  box.innerHTML='<div class="suggest-box">'+sug.map(function(s){return '<button type="button" class="suggest-row" onclick="go(\'/company/'+s.slug+'\')"><span class="logo-sq" style="width:36px;height:36px;font-size:14px;background:'+s.color+'">'+esc(s.logo)+companyLogoImg(s)+'</span><span><span style="display:block;font-weight:600">'+esc(s.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(s.industry)+'</span></span></button>';}).join('')+'</div>';
 }
 function submitSearch(e,id){e.preventDefault();var v=document.getElementById(id).value;if(v&&v.trim())go('/company/'+slugify(v));}
 document.addEventListener('click',function(e){
@@ -942,7 +964,7 @@ function renderHome(){
   var feat=FEATURES.map(function(f){return '<div class="card card-pad card-hover feature"><div class="feature-ico" style="background:'+f.bg+';color:'+f.color+'">'+ico(f.icon,24)+'</div><h3>'+f.title+'</h3><p>'+f.text+'</p></div>';}).join('');
   var ex=EXAMPLES.map(function(e,i){return '<b onclick="go(\'/company/'+e[1]+'\')">'+e[0]+'</b>'+(i<EXAMPLES.length-1?' · ':'');}).join('');
   var allc=Object.assign({},companies,getAdminCompanies());
-  var pop=Object.keys(allc).map(function(k){var c=allc[k];return '<button class="card card-pad card-hover" onclick="go(\'/company/'+c.slug+'\')" style="text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center"><span class="logo-sq" style="width:46px;height:46px;background:'+c.color+'">'+esc(c.logo)+'</span><span><span style="display:block;font-weight:700">'+esc(c.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(c.industry)+'</span></span></button>';}).join('');
+  var pop=Object.keys(allc).map(function(k){var c=allc[k];return '<button class="card card-pad card-hover" onclick="go(\'/company/'+c.slug+'\')" style="text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center"><span class="logo-sq" style="width:46px;height:46px;background:'+c.color+'">'+esc(c.logo)+companyLogoImg(c)+'</span><span><span style="display:block;font-weight:700">'+esc(c.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(c.industry)+'</span></span></button>';}).join('');
   return navbar()+'<div class="fade-in">'+
    '<section class="hero"><div class="hero-inner container">'+
    '<span class="pill" style="background:rgba(255,255,255,.12);color:#cfe0ff">'+ico('spark',14)+' The Bloomberg Terminal of Placements</span>'+
@@ -984,7 +1006,7 @@ function renderCompany(slug){
 
   var html=navbar()+'<div class="fade-in">'+
     '<div class="dash-hero"><div class="container dash-hero-inner">'+
-    '<div class="logo-badge" style="color:'+c.color+'">'+esc(c.logo)+'</div>'+
+    '<div class="logo-badge" style="color:'+c.color+'">'+esc(c.logo)+companyLogoImg(c)+'</div>'+
     '<div style="flex:1;min-width:240px"><div class="flex items-center gap-12 wrap"><h1 style="font-size:30px;color:#fff">'+esc(c.name)+'</h1><span class="pill" style="background:rgba(255,255,255,.14);color:#cfe0ff">'+c.archetypeLabel+'</span>'+(c.generated?'<span class="pill" style="background:rgba(245,158,11,.18);color:#fde0a3">'+ico('bulb',13)+' Auto-generated</span>':'')+'</div>'+
     '<div class="dash-meta"><span>'+ico('building',14)+' '+esc(c.industry)+'</span><span>'+ico('globe',14)+' '+esc(c.hq)+'</span><span>'+ico('users',14)+' '+esc(c.employees)+'</span></div></div>'+
     '<div class="center" style="color:#fff" id="hero-ring">'+ring(pct(),104,10,true)+'</div>'+
