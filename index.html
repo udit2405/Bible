@@ -3131,7 +3131,7 @@ function submitSuggestion(){
   if(!inp||!msg)return;
   var val=(inp.value||'').trim();
   if(!val){inp.style.borderColor='#ef4444';setTimeout(function(){inp.style.borderColor='';},1200);return;}
-  try{fetch(SUGGEST_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({source:'company_suggestion',company:val,page:location.href,ts:new Date().toISOString()})});}catch(e){}
+  try{fetch(SUGGEST_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({source:'company_suggestion',name:val,role:'[Company Suggestion] '+val,email:'',phone:'',page:location.href,ts:new Date().toISOString()})});}catch(e){}
   inp.value='';
   msg.textContent='✓ Thanks! "'+val+'" has been noted — we\'ll add it soon.';
   msg.style.display='block';
