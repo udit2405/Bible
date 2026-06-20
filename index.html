@@ -81,6 +81,8 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
 .dash-nav{position:sticky;top:82px;min-width:0}.dash-nav a{display:block;padding:9px 12px;border-radius:9px;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer}
 .dash-nav a:hover{background:var(--surface-2);color:var(--navy-900)}.dash-nav a.active{background:var(--blue-50);color:var(--blue-600)}
 @media(max-width:960px){.dash-layout{grid-template-columns:1fr}.dash-nav{display:none}}
+.dash-layout main{min-width:0}
+.checklist-grid{display:grid;grid-template-columns:1fr 280px;gap:18px}
 .checklist{list-style:none;padding:0;margin:0}
 .check-item{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--border);border-radius:12px;margin-bottom:10px;cursor:pointer;transition:background .15s,border-color .15s}
 .check-item:hover{background:var(--surface-2)}.check-item.done{background:var(--green-bg);border-color:#bfe6cd}
@@ -130,6 +132,21 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
 .suggest-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:transparent;border:none;padding:10px 12px;border-radius:10px;cursor:pointer}
 .suggest-row:hover{background:var(--surface-2)}
 .logo-sq{border-radius:9px;color:#fff;display:grid;place-items:center;font-weight:800;flex:none;position:relative;overflow:hidden}
+@media(max-width:640px){
+  .checklist-grid{grid-template-columns:1fr}
+  .kv-row{flex-direction:column;gap:2px;padding:8px 0}
+  .kv-val{text-align:left;font-size:14px}
+  .dash-hero-inner{padding:20px 16px 18px;gap:14px}
+  .dash-meta{gap:10px;font-size:13px}
+  .section-title{font-size:19px}
+  .card-pad{padding:18px}
+  .acc-body{padding:0 14px 14px 46px}
+  .coach{height:360px}
+  .tabs{gap:6px}
+  .tab{padding:7px 12px;font-size:13px}
+  .hero-inner{padding:56px 20px 48px}
+  .suggest-row{padding:8px}
+}
 </style>
 </head>
 <body>
@@ -3247,7 +3264,7 @@ function secChecklist(c){
   var items=c.checklist.map(function(label,i){return '<li class="check-item'+(checked[i]?' done':'')+'" onclick="toggleCheck('+i+')"><span class="check-box">'+(checked[i]?ico('check',14,3):'')+'</span><span class="check-label" style="font-weight:500">'+esc(label)+'</span></li>';}).join('');
   var msg=p===100?'You’re fully prepared. Go ace it! 🎯':p>=50?'Good progress — keep going.':'Just getting started. Work through the list.';
   return '<section id="checklist" class="section">'+secHead('9','Placement Readiness Checklist','Tick items off to grow your readiness score')+
-   '<div class="grid" style="grid-template-columns:1fr 280px;gap:18px"><div class="card card-pad"><ul class="checklist">'+items+'</ul></div>'+
+   '<div class="checklist-grid"><div class="card card-pad"><ul class="checklist">'+items+'</ul></div>'+
    '<div class="card card-pad center" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px"><div id="check-ring">'+ring(p)+'</div><div><div style="font-weight:700" id="check-count">'+done+' of '+c.checklist.length+' complete</div><p class="muted" style="font-size:13.5px;margin-top:4px" id="check-msg">'+msg+'</p></div><div class="progress" style="width:100%"><span id="check-bar" style="width:'+p+'%"></span></div></div></div></section>';
 }
 function secCoach(c){
