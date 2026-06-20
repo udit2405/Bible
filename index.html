@@ -3094,7 +3094,9 @@ function footer(){return '<footer class="footer"><div class="container"><div cla
   '<div><h5>Product</h5><a onclick="go(\'/company/infosys\')">Company Dashboards</a><a onclick="go(\'/company/amazon\')">AI Career Coach</a><a onclick="go(\'/admin\')">Admin Panel</a></div>'+
   '<div><h5>Explore</h5><a onclick="go(\'/company/tcs\')">TCS</a><a onclick="go(\'/company/deloitte\')">Deloitte</a><a onclick="go(\'/company/unilever\')">HUL</a></div>'+
   '<div><h5>IMTIIM</h5><a href="https://imtiim.com" target="_blank" rel="noopener">Resume Review</a><a href="https://imtiim.com" target="_blank" rel="noopener">1-on-1 Mentoring</a><a href="https://imtiim.com" target="_blank" rel="noopener">Free ATS Score</a></div></div>'+
-  '<div class="bottom"><span>© '+new Date().getFullYear()+' IMTIIM · Placement Bible. For educational use. Figures are approximate.</span><span>An IMTIIM product · Made for campus placements in India 🇮🇳</span></div></div></footer>';}
+  '<div class="bottom"><span>© '+new Date().getFullYear()+' IMTIIM · Placement Bible. For educational use. Figures are approximate.</span><span>An IMTIIM product · Made for campus placements in India 🇮🇳</span></div>'+
+  '<div style="border-top:1px solid #1d3358;margin-top:14px;padding-top:14px;font-size:12px;color:#566a88;line-height:1.6">Note: This database is compiled from multiple sources and may contain occasional anomalies or inaccuracies. Users are advised to verify the information independently.</div>'+
+  '</div></footer>';}
 
 /* ---------------- Search box ---------------- */
 function searchBoxHTML(id){return '<div style="position:relative"><form class="search" onsubmit="submitSearch(event,\''+id+'\');return false">'+
@@ -3122,6 +3124,20 @@ var FEATURES=[
  {icon:'chart',color:'#d97706',bg:'#fef3e2',title:'Industry Intelligence',text:'Sector trends, outlook and KPIs so you can speak the company’s language.'},
  {icon:'chat',color:'#0d9488',bg:'#e0f5f1',title:'AI Career Coach',text:'Ask anything about the company and get contextual, prep-focused answers.'}];
 var EXAMPLES=[['Amazon','amazon'],['Deloitte','deloitte'],['Infosys','infosys'],['Nestlé','nestle'],['Unilever','unilever'],['Accenture','accenture']];
+var SUGGEST_ENDPOINT='https://script.google.com/macros/s/AKfycbwwh6aSuBlhfczh2vgv1dtK2Nys2V-LhsjUel36sLGJFtPSoCsy9x04280pupjSzDpc6A/exec';
+function submitSuggestion(){
+  var inp=document.getElementById('suggest-input');
+  var msg=document.getElementById('suggest-msg');
+  if(!inp||!msg)return;
+  var val=(inp.value||'').trim();
+  if(!val){inp.style.borderColor='#ef4444';setTimeout(function(){inp.style.borderColor='';},1200);return;}
+  try{fetch(SUGGEST_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({source:'company_suggestion',company:val,page:location.href,ts:new Date().toISOString()})});}catch(e){}
+  inp.value='';
+  msg.textContent='✓ Thanks! "'+val+'" has been noted — we\'ll add it soon.';
+  msg.style.display='block';
+  setTimeout(function(){msg.style.display='none';},4000);
+}
+
 function renderHome(){
   var feat=FEATURES.map(function(f){return '<div class="card feature" style="padding:14px 16px"><div class="feature-row"><div class="feature-ico" style="background:'+f.bg+';color:'+f.color+'">'+ico(f.icon,18)+'</div><div><h3>'+f.title+'</h3><p>'+f.text+'</p></div></div></div>';}).join('');
   var ex=EXAMPLES.map(function(e,i){return '<b onclick="go(\'/company/'+e[1]+'\')">'+e[0]+'</b>'+(i<EXAMPLES.length-1?' · ':'');}).join('');
@@ -3136,7 +3152,12 @@ function renderHome(){
    '<div class="hero-stats"><div class="hero-stat"><div class="n">'+Object.keys(allc).length+'+</div><div class="l">Companies fully mapped</div></div><div class="hero-stat"><div class="n">10</div><div class="l">Dashboard sections</div></div><div class="hero-stat"><div class="n">∞</div><div class="l">Any company, instantly</div></div></div>'+
    '</div></section>'+
    '<section class="container" style="padding:36px 24px 16px"><div class="flex between items-center mb-16 wrap" style="gap:8px"><div><div class="eyebrow">One dashboard, everything you need</div><h2 style="font-size:22px;margin-top:6px;font-weight:800">Built to make you interview-ready</h2></div><span class="muted" style="font-size:13px">7 intel modules · one company search</span></div><div class="modules-grid">'+feat+'</div></section>'+
-   '<section class="container" style="padding:48px 24px 70px"><div class="flex between items-center mb-24 wrap" style="gap:12px"><div><div class="eyebrow">Start here</div><h2 style="font-size:28px;margin-top:8px">Popular companies</h2></div><span class="muted" style="font-size:14px">Click any company to open its full dashboard →</span></div><div class="grid grid-4">'+pop+'</div></section>'+
+   '<section class="container" style="padding:0 24px 28px"><div class="card" style="background:var(--surface);border:1.5px dashed var(--border);padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">'+
+   '<div style="flex:1;min-width:200px"><div style="font-weight:700;font-size:15px;margin-bottom:3px">Can\'t find your company?</div><div style="color:var(--muted);font-size:13px">Suggest it and we\'ll add it to the database.</div></div>'+
+   '<div style="display:flex;gap:8px;flex:2;min-width:260px"><input id="suggest-input" type="text" placeholder="Company name e.g. Godrej Agrovet" onkeydown="if(event.key===\'Enter\')submitSuggestion()" style="flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;background:var(--bg);color:var(--text);outline:none" /><button onclick="submitSuggestion()" style="padding:10px 18px;background:var(--blue-600);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap">Suggest →</button></div>'+
+   '<div id="suggest-msg" style="width:100%;font-size:13px;color:var(--blue-600);display:none;font-weight:600"></div>'+
+   '</div></section>'+
+   '<section class="container" style="padding:24px 24px 70px"><div class="flex between items-center mb-24 wrap" style="gap:12px"><div><div class="eyebrow">Start here</div><h2 style="font-size:28px;margin-top:8px">Popular companies</h2></div><span class="muted" style="font-size:14px">Click any company to open its full dashboard →</span></div><div class="grid grid-4">'+pop+'</div></section>'+
    '<section class="container" style="padding-bottom:70px"><div class="card card-pad" style="background:var(--navy-grad);color:#fff;text-align:center;padding:48px"><h2 style="font-size:28px">Walk into your next interview prepared</h2><p style="color:#dbe2fe;max-width:560px;margin:12px auto 22px">Search any company above, or open a sample dashboard to see everything Placement Bible gives you.</p><button class="btn btn-light" onclick="go(\'/company/amazon\')">Open sample dashboard '+ico('arrow',18)+'</button></div></section>'+
    '</div>'+footer();
 }
