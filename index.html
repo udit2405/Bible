@@ -116,9 +116,6 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
 .footer a{display:block;color:#aebfda;font-size:13.5px;padding:4px 0;cursor:pointer}.footer a:hover{color:#fff}
 .footer .bottom{border-top:1px solid #1d3358;margin-top:34px;padding-top:20px;font-size:13px;color:#7e93b8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 @media(max-width:760px){.footer .cols{grid-template-columns:1fr 1fr}}
-.admin-tabs{display:flex;gap:6px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
-.admin-tab{padding:12px 16px;font-weight:600;font-size:14.5px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-top:none;border-left:none;border-right:none}
-.admin-tab.active{color:var(--blue-600);border-bottom-color:var(--blue-600)}
 .field{margin-bottom:16px}.field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
 .field input,.field textarea,.field select{width:100%;border:1px solid var(--border);border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:inherit;outline:none;background:#fff}
 .field input:focus,.field textarea:focus{border-color:var(--blue-400)}
@@ -2999,13 +2996,9 @@ function companyLogoImg(c){
 }
 
 /* ---------------- Store / resolver ---------------- */
-var ADMIN_KEY='pb_admin_companies';
 function slugify(n){return (n||'').toString().trim().toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
 function lsGet(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}}
 function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
-function getAdminCompanies(){return lsGet(ADMIN_KEY,{});}
-function saveAdminCompany(c){var all=getAdminCompanies();var s=c.slug||slugify(c.name);all[s]=Object.assign({},c,{slug:s,_admin:true});lsSet(ADMIN_KEY,all);return s;}
-function deleteAdminCompany(s){var all=getAdminCompanies();delete all[s];lsSet(ADMIN_KEY,all);}
 function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 function applyArchetype(c){
@@ -3030,18 +3023,16 @@ function generateCompany(raw){
   return applyArchetype(base);
 }
 function resolveCompany(slug){
-  var key=slugify(slug);var admin=getAdminCompanies();
-  if(admin[key])return Object.assign(applyArchetype(admin[key]),{generated:false});
+  var key=slugify(slug);
   if(companies[key])return Object.assign(applyArchetype(companies[key]),{generated:false});
-  var all=Object.assign({},companies,admin);var hit=null;
-  Object.keys(all).forEach(function(k){var c=all[k];var sc=slugify(c.name);if(!hit&&(sc===key||sc.indexOf(key)>=0||key.indexOf(sc)>=0))hit=c;});
+  var hit=null;
+  Object.keys(companies).forEach(function(k){var c=companies[k];var sc=slugify(c.name);if(!hit&&(sc===key||sc.indexOf(key)>=0||key.indexOf(sc)>=0))hit=c;});
   if(hit)return Object.assign(applyArchetype(hit),{generated:false});
   return Object.assign(generateCompany(slug),{generated:true});
 }
 function searchSuggestions(q){
-  q=(q||'').trim().toLowerCase();if(!q)return[];
-  var all=Object.assign({},companies,getAdminCompanies());var out=[];
-  Object.keys(all).forEach(function(k){var c=all[k];if(out.length<6&&(c.name.toLowerCase().indexOf(q)>=0||(c.industry||'').toLowerCase().indexOf(q)>=0))out.push({slug:c.slug,name:c.name,logo:c.logo,color:c.color,industry:c.industry});});
+  q=(q||'').trim().toLowerCase();if(!q)return[];var out=[];
+  Object.keys(companies).forEach(function(k){var c=companies[k];if(out.length<6&&(c.name.toLowerCase().indexOf(q)>=0||(c.industry||'').toLowerCase().indexOf(q)>=0))out.push({slug:c.slug,name:c.name,logo:c.logo,color:c.color,industry:c.industry});});
   return out;
 }
 
@@ -3085,13 +3076,13 @@ function ring(percent,size,stroke,light){
 /* ---------------- Layout chrome ---------------- */
 function navbar(){return '<nav class="nav"><div class="container nav-inner">'+
   '<a class="brand" onclick="go(\'/\')" style="cursor:pointer">IMT<span class="brand-im">IIM</span><span class="brand-tag">Placement Bible</span></a>'+
-  '<div class="nav-links"><a class="hide-sm" onclick="go(\'/\')">Home</a><a class="hide-sm" onclick="go(\'/company/amazon\')">Sample Dashboard</a><a class="hide-sm" onclick="go(\'/admin\')">Admin</a>'+
+  '<div class="nav-links"><a class="hide-sm" onclick="go(\'/\')">Home</a><a class="hide-sm" onclick="go(\'/company/amazon\')">Sample Dashboard</a>'+
   '<button class="btn btn-primary btn-sm" onclick="go(\'/\')">'+ico('search',16)+' Search</button></div></div></nav>';}
 function footer(){return '<footer class="footer"><div class="container"><div class="cols">'+
   '<div><div class="brand" style="color:#fff;margin-bottom:12px">IMT<span class="brand-im" style="color:#818cf8">IIM</span><span class="brand-tag" style="background:rgba(129,140,248,.16);color:#c7d2fe">Placement Bible</span></div>'+
   '<p style="color:#aebfda;font-size:14px;max-width:320px">Placement Bible is an IMTIIM product. Search any company and walk into your campus interview prepared — built for Indian students, interns and freshers.</p>'+
   '<a href="https://imtiim.com" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;color:#818cf8;font-weight:700;font-size:13.5px">Explore IMTIIM →</a></div>'+
-  '<div><h5>Product</h5><a onclick="go(\'/company/infosys\')">Company Dashboards</a><a onclick="go(\'/company/amazon\')">AI Career Coach</a><a onclick="go(\'/admin\')">Admin Panel</a></div>'+
+  '<div><h5>Product</h5><a onclick="go(\'/company/infosys\')">Company Dashboards</a><a onclick="go(\'/company/amazon\')">AI Career Coach</a></div>'+
   '<div><h5>Explore</h5><a onclick="go(\'/company/tcs\')">TCS</a><a onclick="go(\'/company/deloitte\')">Deloitte</a><a onclick="go(\'/company/unilever\')">HUL</a></div>'+
   '<div><h5>IMTIIM</h5><a href="https://imtiim.com" target="_blank" rel="noopener">Resume Review</a><a href="https://imtiim.com" target="_blank" rel="noopener">1-on-1 Mentoring</a><a href="https://imtiim.com" target="_blank" rel="noopener">Free ATS Score</a></div></div>'+
   '<div class="bottom"><span>© '+new Date().getFullYear()+' IMTIIM · Placement Bible. For educational use. Figures are approximate.</span><span>An IMTIIM product · Made for campus placements in India 🇮🇳</span></div>'+
@@ -3141,7 +3132,7 @@ function submitSuggestion(){
 function renderHome(){
   var feat=FEATURES.map(function(f){return '<div class="card feature" style="padding:14px 16px"><div class="feature-row"><div class="feature-ico" style="background:'+f.bg+';color:'+f.color+'">'+ico(f.icon,18)+'</div><div><h3>'+f.title+'</h3><p>'+f.text+'</p></div></div></div>';}).join('');
   var ex=EXAMPLES.map(function(e,i){return '<b onclick="go(\'/company/'+e[1]+'\')">'+e[0]+'</b>'+(i<EXAMPLES.length-1?' · ':'');}).join('');
-  var allc=Object.assign({},companies,getAdminCompanies());
+  var allc=companies;
   var pop=Object.keys(allc).map(function(k){var c=allc[k];return '<button class="card card-pad card-hover" onclick="go(\'/company/'+c.slug+'\')" style="text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center"><span class="logo-sq" style="width:46px;height:46px;background:'+c.color+'">'+esc(c.logo)+companyLogoImg(c)+'</span><span><span style="display:block;font-weight:700">'+esc(c.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(c.industry)+'</span></span></button>';}).join('');
   return navbar()+'<div class="fade-in">'+
    '<section class="hero"><div class="hero-inner container">'+
@@ -3185,7 +3176,7 @@ function renderCompany(slug){
   var nav=[['overview','Overview'],['business','Business Model'],['placement','Placement'],['interview','Interview Process'],['faq','FAQs'],['swot','SWOT'],['competitors','Competitors'],['industry','Industry'],['checklist','Readiness'],['coach','AI Coach']];
   var navHTML=nav.map(function(p){return '<a href="#'+p[0]+'">'+p[1]+'</a>';}).join('')+'<div style="margin-top:16px">'+searchBoxHTML('dash-search')+'</div>';
 
-  var genBanner=c.generated?'<div class="container" style="padding-top:16px"><div class="card card-pad" style="background:var(--amber-bg);border-color:#f7ddb4;display:flex;gap:12px"><span style="color:var(--amber);flex:none;margin-top:2px">'+ico('bulb',20)+'</span><p style="font-size:14px"><b>“'+esc(c.name)+'” isn’t in our curated database yet</b>, so this is an auto-generated starter dashboard built from a smart template. The structure and prep guidance are ready to use — fill in the company-specific blanks from the official careers page, or add it permanently via the <a onclick="go(\'/admin\')" style="color:var(--blue-600);font-weight:600;cursor:pointer">Admin panel</a>.</p></div></div>':'';
+  var genBanner=c.generated?’<div class=”container” style=”padding-top:16px”><div class=”card card-pad” style=”background:var(--amber-bg);border-color:#f7ddb4;display:flex;gap:12px”><span style=”color:var(--amber);flex:none;margin-top:2px”>’+ico(‘bulb’,20)+’</span><p style=”font-size:14px”><b>”’+esc(c.name)+’” isn\’t in our curated database yet</b>, so this is an auto-generated starter dashboard built from a smart template. The structure and prep guidance are ready to use — fill in the company-specific blanks from the official careers page.</p></div></div>’:’’;
 
   var html=navbar()+'<div class="fade-in">'+
     '<div class="dash-hero"><div class="container dash-hero-inner">'+
@@ -3287,133 +3278,14 @@ function coachAsk(text){if(!text||!text.trim())return;coachLog.push({from:'user'
   var log=document.getElementById('coach-log');log.innerHTML=coachLog.map(function(m){return '<div class="msg '+m.from+'">'+esc(m.text)+'</div>';}).join('');log.scrollTop=log.scrollHeight;}
 function coachSubmit(e){e.preventDefault();var inp=document.getElementById('coach-input');coachAsk(inp.value);inp.value='';}
 
-/* ---------------- ADMIN ---------------- */
-var adminTab='companies';
-function renderAdmin(){
-  var tabs=[['companies','Companies','building'],['experiences','Interview Experiences','doc'],['questions','Placement Questions','list'],['users','Users','users'],['analytics','Analytics','chart']];
-  var tabHTML=tabs.map(function(t){return '<button class="admin-tab'+(adminTab===t[0]?' active':'')+'" onclick="setAdmin(\''+t[0]+'\')"><span class="flex items-center gap-8">'+ico(t[2],15)+' '+t[1]+'</span></button>';}).join('');
-  return navbar()+'<div class="container fade-in" style="padding:34px 24px 80px">'+
-   '<div class="flex between items-center wrap mb-24" style="gap:12px"><div><div class="eyebrow">Control Center</div><h1 style="font-size:30px;margin-top:6px">Admin Panel</h1><p class="muted" style="font-size:14.5px;margin-top:4px">Manage companies, experiences, questions and users. All data is saved locally in your browser.</p></div><button class="btn btn-ghost btn-sm" onclick="go(\'/\')">'+ico('arrow',15)+' Back to site</button></div>'+
-   '<div class="admin-tabs">'+tabHTML+'</div><div id="admin-body">'+adminBody()+'</div></div>'+footer();
-}
-function adminBody(){
-  if(adminTab==='companies')return adminCompanies();
-  if(adminTab==='experiences')return adminExperiences();
-  if(adminTab==='questions')return adminQuestions();
-  if(adminTab==='users')return adminUsers();
-  return adminAnalytics();
-}
-function setAdmin(t){adminTab=t;document.getElementById('admin-body').innerHTML=adminBody();}
-
-function adminCompanies(){
-  var admin=getAdminCompanies();var curated=Object.keys(companies).map(function(k){return companies[k];});var added=Object.keys(admin).map(function(k){return admin[k];});
-  var typeOpts=Object.keys(archetypes).map(function(k){return '<option value="'+k+'">'+archetypes[k].label+'</option>';}).join('');
-  var addedRows=added.map(function(c){return '<tr><td><a onclick="go(\'/company/'+c.slug+'\')" style="font-weight:600;color:var(--blue-600);cursor:pointer">'+esc(c.name)+'</a></td><td class="muted">'+esc(c.industry)+'</td><td><span class="pill" style="background:var(--green-bg);color:var(--green)">Added</span></td><td><button class="btn btn-ghost btn-sm" onclick="removeCompany(\''+c.slug+'\')">'+ico('trash',14)+'</button></td></tr>';}).join('');
-  var curatedRows=curated.map(function(c){return '<tr><td><a onclick="go(\'/company/'+c.slug+'\')" style="font-weight:600;color:var(--blue-600);cursor:pointer">'+esc(c.name)+'</a></td><td class="muted">'+esc(c.industry)+'</td><td><span class="pill pill-soft">Curated</span></td><td><span class="muted" style="font-size:12px">built-in</span></td></tr>';}).join('');
-  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
-   '<form class="card card-pad" onsubmit="addCompany(event)"><h3 style="font-size:17px;margin-bottom:16px">Add a company</h3>'+
-   '<div class="field"><label>Company name *</label><input id="co-name" placeholder="e.g. Zomato"/></div>'+
-   '<div class="field"><label>Type (archetype)</label><select id="co-type">'+typeOpts+'</select></div>'+
-   '<div class="field"><label>Industry</label><input id="co-industry" placeholder="e.g. Food-tech"/></div>'+
-   '<div class="grid grid-2" style="gap:12px"><div class="field"><label>Headquarters</label><input id="co-hq" placeholder="Gurugram"/></div><div class="field"><label>Employees</label><input id="co-emp" placeholder="~5,000"/></div></div>'+
-   '<div class="field"><label>Salary range</label><input id="co-salary" placeholder="₹8–14 LPA"/></div>'+
-   '<div class="field"><label>Segments (comma separated)</label><input id="co-seg" placeholder="Delivery, Dining, Quick-commerce"/></div>'+
-   '<div class="field"><label>Value proposition</label><input id="co-vp" placeholder="One-line value prop"/></div>'+
-   '<div class="field"><label>Description</label><textarea id="co-desc" rows="3" placeholder="Short company description"></textarea></div>'+
-   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Save company</button>'+
-   '<p class="muted" style="font-size:12.5px;margin-top:10px">Interview rounds, FAQs and skills are auto-filled from the chosen archetype.</p></form>'+
-   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Company directory <span class="muted" style="font-weight:400">('+(curated.length+added.length)+')</span></h3>'+
-   '<table class="table"><thead><tr><th>Company</th><th>Industry</th><th>Source</th><th></th></tr></thead><tbody>'+addedRows+curatedRows+'</tbody></table></div></div>';
-}
-function addCompany(e){e.preventDefault();var name=document.getElementById('co-name').value;if(!name.trim())return;
-  var seg=document.getElementById('co-seg').value;
-  saveAdminCompany({name:name,type:document.getElementById('co-type').value,industry:document.getElementById('co-industry').value||'Industry',hq:document.getElementById('co-hq').value||'—',employees:document.getElementById('co-emp').value||'—',presence:'—',
-    salaryRange:document.getElementById('co-salary').value||undefined,segments:seg?seg.split(',').map(function(s){return s.trim();}).filter(Boolean):['Core segment'],
-    description:document.getElementById('co-desc').value||(name+' company profile.'),logo:name.trim().slice(0,2).toUpperCase(),color:'#4f46e5',
-    business:{revenueStreams:['Primary revenue'],products:['Core product'],customers:['Customers'],valueProp:document.getElementById('co-vp').value||(name+'’s value proposition.')},
-    swot:{strengths:['Strength'],weaknesses:['Weakness'],opportunities:['Opportunity'],threats:['Threat']},competitors:[{name:'Competitor',position:'Rival',diff:'How it differs.'}]});
-  document.getElementById('admin-body').innerHTML=adminBody();
-}
-function removeCompany(s){deleteAdminCompany(s);document.getElementById('admin-body').innerHTML=adminBody();}
-
-function adminExperiences(){
-  var items=lsGet('pb_experiences',[]);
-  var list=items.length?items.map(function(i){var vc=i.verdict==='Selected'?'background:var(--green-bg);color:var(--green)':i.verdict==='Rejected'?'background:var(--red-bg);color:var(--red)':'background:var(--blue-50);color:var(--blue-600)';
-    return '<div class="card card-pad mb-16" style="box-shadow:none"><div class="flex between items-center wrap" style="gap:8px"><div class="flex items-center gap-8 wrap"><b>'+esc(i.company)+'</b><span class="pill pill-soft">'+esc(i.role||'Role')+'</span><span class="pill pill-soft">'+esc(i.year)+'</span><span class="pill" style="'+vc+'">'+esc(i.verdict)+'</span></div><button class="btn btn-ghost btn-sm" onclick="delItem(\'pb_experiences\','+i.id+')">'+ico('trash',14)+'</button></div><p class="muted" style="font-size:14px;margin-top:10px;white-space:pre-line">'+esc(i.text)+'</p></div>';}).join(''):'<p class="muted">No experiences yet. Add one from the form.</p>';
-  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
-   '<form class="card card-pad" onsubmit="addExp(event)"><h3 style="font-size:17px;margin-bottom:16px">Upload an interview experience</h3>'+
-   '<div class="field"><label>Company *</label><input id="ex-co" placeholder="Infosys"/></div>'+
-   '<div class="grid grid-2" style="gap:12px"><div class="field"><label>Role</label><input id="ex-role" placeholder="Systems Engineer"/></div><div class="field"><label>Year</label><input id="ex-year" value="2026"/></div></div>'+
-   '<div class="field"><label>Verdict</label><select id="ex-verdict"><option>Selected</option><option>Rejected</option><option>In process</option></select></div>'+
-   '<div class="field"><label>Experience *</label><textarea id="ex-text" rows="5" placeholder="Round-by-round account…"></textarea></div>'+
-   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Publish experience</button></form>'+
-   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Submitted experiences <span class="muted" style="font-weight:400">('+items.length+')</span></h3>'+list+'</div></div>';
-}
-function addExp(e){e.preventDefault();var co=document.getElementById('ex-co').value,text=document.getElementById('ex-text').value;if(!co.trim()||!text.trim())return;
-  var items=lsGet('pb_experiences',[]);items.unshift({id:Date.now(),company:co,role:document.getElementById('ex-role').value,year:document.getElementById('ex-year').value,verdict:document.getElementById('ex-verdict').value,text:text});
-  lsSet('pb_experiences',items);document.getElementById('admin-body').innerHTML=adminBody();}
-
-function adminQuestions(){
-  var items=lsGet('pb_questions',[]);
-  var rows=items.length?items.map(function(i){return '<tr><td>'+esc(i.question)+'</td><td class="muted">'+esc(i.company||'—')+'</td><td><span class="pill pill-soft">'+esc(i.category)+'</span></td><td><button class="btn btn-ghost btn-sm" onclick="delItem(\'pb_questions\','+i.id+')">'+ico('trash',14)+'</button></td></tr>';}).join(''):'<tr><td colspan="4" class="muted">No questions added yet.</td></tr>';
-  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
-   '<form class="card card-pad" onsubmit="addQ(event)"><h3 style="font-size:17px;margin-bottom:16px">Add a placement question</h3>'+
-   '<div class="field"><label>Company</label><input id="q-co" placeholder="Amazon"/></div>'+
-   '<div class="field"><label>Category</label><select id="q-cat"><option>HR</option><option>Technical</option><option>Case</option><option>Behavioral</option></select></div>'+
-   '<div class="field"><label>Question *</label><textarea id="q-text" rows="3" placeholder="Type the question…"></textarea></div>'+
-   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Add question</button></form>'+
-   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Question bank <span class="muted" style="font-weight:400">('+items.length+')</span></h3><table class="table"><thead><tr><th>Question</th><th>Company</th><th>Category</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
-}
-function addQ(e){e.preventDefault();var text=document.getElementById('q-text').value;if(!text.trim())return;
-  var items=lsGet('pb_questions',[]);items.unshift({id:Date.now(),company:document.getElementById('q-co').value,category:document.getElementById('q-cat').value,question:text});
-  lsSet('pb_questions',items);document.getElementById('admin-body').innerHTML=adminBody();}
-
-function adminUsers(){
-  var items=lsGet('pb_users',[{id:1,name:'Demo Student',email:'demo@college.edu',college:'IIT',role:'Student'}]);
-  var rows=items.map(function(i){return '<tr><td style="font-weight:600">'+esc(i.name)+'</td><td class="muted">'+esc(i.email||'—')+'</td><td class="muted">'+esc(i.college||'—')+'</td><td><span class="pill pill-soft">'+esc(i.role)+'</span></td><td><button class="btn btn-ghost btn-sm" onclick="delItem(\'pb_users\','+i.id+')">'+ico('trash',14)+'</button></td></tr>';}).join('');
-  return '<div class="grid" style="grid-template-columns:380px 1fr;gap:24px;align-items:start">'+
-   '<form class="card card-pad" onsubmit="addUser(event)"><h3 style="font-size:17px;margin-bottom:16px">Add a user</h3>'+
-   '<div class="field"><label>Name *</label><input id="u-name" placeholder="Student name"/></div>'+
-   '<div class="field"><label>Email</label><input id="u-email" placeholder="name@college.edu"/></div>'+
-   '<div class="field"><label>College</label><input id="u-college" placeholder="College / University"/></div>'+
-   '<div class="field"><label>Role</label><select id="u-role"><option>Student</option><option>Placement Coordinator</option><option>Admin</option></select></div>'+
-   '<button class="btn btn-primary" type="submit" style="width:100%">'+ico('plus',16)+' Add user</button></form>'+
-   '<div class="card card-pad"><h3 style="font-size:17px;margin-bottom:14px">Users <span class="muted" style="font-weight:400">('+items.length+')</span></h3><table class="table"><thead><tr><th>Name</th><th>Email</th><th>College</th><th>Role</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div></div>';
-}
-function addUser(e){e.preventDefault();var name=document.getElementById('u-name').value;if(!name.trim())return;
-  var items=lsGet('pb_users',[{id:1,name:'Demo Student',email:'demo@college.edu',college:'IIT',role:'Student'}]);
-  items.unshift({id:Date.now(),name:name,email:document.getElementById('u-email').value,college:document.getElementById('u-college').value,role:document.getElementById('u-role').value});
-  lsSet('pb_users',items);document.getElementById('admin-body').innerHTML=adminBody();}
-
-function delItem(key,id){var items=lsGet(key,[]);lsSet(key,items.filter(function(i){return i.id!==id;}));document.getElementById('admin-body').innerHTML=adminBody();}
-
-function adminAnalytics(){
-  var admin=getAdminCompanies();var experiences=lsGet('pb_experiences',[]);var questions=lsGet('pb_questions',[]);var users=lsGet('pb_users',[{id:1}]);
-  var all=Object.assign({},companies,admin);var total=Object.keys(all).length;
-  var byType={};Object.keys(all).forEach(function(k){var t=(archetypes[all[k].type]||{}).label||'Other';byType[t]=(byType[t]||0)+1;});
-  var max=Math.max.apply(null,[1].concat(Object.keys(byType).map(function(k){return byType[k];})));
-  var stats=[['Companies',total,Object.keys(admin).length+' added by admin'],['Interview Experiences',experiences.length,'Submitted'],['Questions in Bank',questions.length,'Across categories'],['Registered Users',users.length,'In the platform']];
-  var statHTML=stats.map(function(s){return '<div class="card kpi"><div class="kpi-label">'+s[0]+'</div><div class="kpi-value">'+s[1]+'</div><div class="kpi-foot">'+s[2]+'</div></div>';}).join('');
-  var bars=Object.keys(byType).map(function(k){return '<div style="margin-bottom:14px"><div class="flex between" style="font-size:13.5px;margin-bottom:6px"><span>'+k+'</span><b>'+byType[k]+'</b></div><div class="progress"><span style="width:'+(byType[k]/max*100)+'%"></span></div></div>';}).join('');
-  return '<div class="fade-in"><div class="grid grid-4 mb-24">'+statHTML+'</div>'+
-   '<div class="grid grid-2"><div class="card card-pad"><h3 style="font-size:16px;margin-bottom:16px">Companies by archetype</h3>'+bars+'</div>'+
-   '<div class="card card-pad"><h3 style="font-size:16px;margin-bottom:10px">Platform health</h3><div class="kv">'+
-   '<div class="kv-row"><span class="kv-key">Curated companies</span><span class="kv-val">'+Object.keys(companies).length+'</span></div>'+
-   '<div class="kv-row"><span class="kv-key">Admin-added companies</span><span class="kv-val">'+Object.keys(admin).length+'</span></div>'+
-   '<div class="kv-row"><span class="kv-key">Content items (Q + experiences)</span><span class="kv-val">'+(questions.length+experiences.length)+'</span></div>'+
-   '<div class="kv-row"><span class="kv-key">Avg. questions / company</span><span class="kv-val">'+(questions.length/total).toFixed(1)+'</span></div></div>'+
-   '<p class="muted" style="font-size:12.5px;margin-top:14px">Analytics are computed live from locally stored data. Connect a backend later for cross-device, multi-user analytics.</p></div></div></div>';
-}
-
 /* ---------------- Router ---------------- */
-function go(path){location.hash='#'+path;}
+function go(path){location.hash=’#’+path;}
 function router(){
-  var hash=location.hash.replace(/^#/,'')||'/';
-  var app=document.getElementById('app');window.scrollTo(0,0);
+  var hash=location.hash.replace(/^#/,’’)||’/’;
+  var app=document.getElementById(‘app’);window.scrollTo(0,0);
   var m=hash.match(/^\/company\/(.+)$/);
   if(m){app.innerHTML=renderCompany(decodeURIComponent(m[1]));
-    setTimeout(function(){var log=document.getElementById('coach-log');if(log)log.scrollTop=log.scrollHeight;},0);return;}
-  if(hash.indexOf('/admin')===0){adminTab='companies';app.innerHTML=renderAdmin();return;}
+    setTimeout(function(){var log=document.getElementById(‘coach-log’);if(log)log.scrollTop=log.scrollHeight;},0);return;}
   app.innerHTML=renderHome();
 }
 window.addEventListener('hashchange',router);
