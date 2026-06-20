@@ -3176,7 +3176,7 @@ function renderCompany(slug){
   var nav=[['overview','Overview'],['business','Business Model'],['placement','Placement'],['interview','Interview Process'],['faq','FAQs'],['swot','SWOT'],['competitors','Competitors'],['industry','Industry'],['checklist','Readiness'],['coach','AI Coach']];
   var navHTML=nav.map(function(p){return '<a href="#'+p[0]+'">'+p[1]+'</a>';}).join('')+'<div style="margin-top:16px">'+searchBoxHTML('dash-search')+'</div>';
 
-  var genBanner=c.generated?’<div class=”container” style=”padding-top:16px”><div class=”card card-pad” style=”background:var(--amber-bg);border-color:#f7ddb4;display:flex;gap:12px”><span style=”color:var(--amber);flex:none;margin-top:2px”>’+ico(‘bulb’,20)+’</span><p style=”font-size:14px”><b>”’+esc(c.name)+’” isn\’t in our curated database yet</b>, so this is an auto-generated starter dashboard built from a smart template. The structure and prep guidance are ready to use — fill in the company-specific blanks from the official careers page.</p></div></div>’:’’;
+  var genBanner=c.generated?'<div class="container" style="padding-top:16px"><div class="card card-pad" style="background:var(--amber-bg);border-color:#f7ddb4;display:flex;gap:12px"><span style="color:var(--amber);flex:none;margin-top:2px">'+ico('bulb',20)+'</span><p style="font-size:14px"><b>“'+esc(c.name)+'” isn’t in our curated database yet</b>, so this is an auto-generated starter dashboard built from a smart template. The structure and prep guidance are ready to use — fill in the company-specific blanks from the official careers page.</p></div></div>':'';
 
   var html=navbar()+'<div class="fade-in">'+
     '<div class="dash-hero"><div class="container dash-hero-inner">'+
@@ -3279,13 +3279,13 @@ function coachAsk(text){if(!text||!text.trim())return;coachLog.push({from:'user'
 function coachSubmit(e){e.preventDefault();var inp=document.getElementById('coach-input');coachAsk(inp.value);inp.value='';}
 
 /* ---------------- Router ---------------- */
-function go(path){location.hash=’#’+path;}
+function go(path){location.hash='#'+path;}
 function router(){
-  var hash=location.hash.replace(/^#/,’’)||’/’;
-  var app=document.getElementById(‘app’);window.scrollTo(0,0);
+  var hash=location.hash.replace(/^#/,'')||'/';
+  var app=document.getElementById('app');window.scrollTo(0,0);
   var m=hash.match(/^\/company\/(.+)$/);
   if(m){app.innerHTML=renderCompany(decodeURIComponent(m[1]));
-    setTimeout(function(){var log=document.getElementById(‘coach-log’);if(log)log.scrollTop=log.scrollHeight;},0);return;}
+    setTimeout(function(){var log=document.getElementById('coach-log');if(log)log.scrollTop=log.scrollHeight;},0);return;}
   app.innerHTML=renderHome();
 }
 window.addEventListener('hashchange',router);
