@@ -67,8 +67,13 @@ h1,h2,h3,h4{margin:0;line-height:1.2;letter-spacing:-.02em}p{margin:0}
 .hero .examples{margin-top:18px;color:#c7d2fe;font-size:13.5px}.hero .examples b{color:#fff;font-weight:600;cursor:pointer}.hero .examples b:hover{text-decoration:underline}
 .hero-stats{display:flex;gap:40px;justify-content:center;margin-top:50px;flex-wrap:wrap}.hero-stat .n{font-size:30px;font-weight:800}.hero-stat .l{color:#c7d2fe;font-size:13.5px}
 @media(max-width:720px){.hero h1{font-size:34px}.hero p.sub{font-size:16px}}
-.feature-ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px}
-.feature h3{font-size:17px;margin-bottom:6px}.feature p{color:var(--muted);font-size:14px}
+.feature-ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex:none}
+.feature-row{display:flex;gap:10px;align-items:flex-start}
+.feature h3{font-size:14px;font-weight:700;margin-bottom:3px;line-height:1.3}
+.feature p{color:var(--muted);font-size:13px;line-height:1.5;margin:0}
+.modules-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:860px){.modules-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.modules-grid{grid-template-columns:1fr}}
 .dash-hero{background:var(--navy-grad);color:#fff}.dash-hero-inner{padding:34px 24px 30px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
 .logo-badge{width:76px;height:76px;border-radius:18px;background:#fff;display:grid;place-items:center;font-size:30px;font-weight:800;flex:none;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .dash-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px;color:#dbe2fe;font-size:14px}
@@ -3118,7 +3123,7 @@ var FEATURES=[
  {icon:'chat',color:'#0d9488',bg:'#e0f5f1',title:'AI Career Coach',text:'Ask anything about the company and get contextual, prep-focused answers.'}];
 var EXAMPLES=[['Amazon','amazon'],['Deloitte','deloitte'],['Infosys','infosys'],['Nestlé','nestle'],['Unilever','unilever'],['Accenture','accenture']];
 function renderHome(){
-  var feat=FEATURES.map(function(f){return '<div class="card card-pad card-hover feature"><div class="feature-ico" style="background:'+f.bg+';color:'+f.color+'">'+ico(f.icon,24)+'</div><h3>'+f.title+'</h3><p>'+f.text+'</p></div>';}).join('');
+  var feat=FEATURES.map(function(f){return '<div class="card feature" style="padding:14px 16px"><div class="feature-row"><div class="feature-ico" style="background:'+f.bg+';color:'+f.color+'">'+ico(f.icon,18)+'</div><div><h3>'+f.title+'</h3><p>'+f.text+'</p></div></div></div>';}).join('');
   var ex=EXAMPLES.map(function(e,i){return '<b onclick="go(\'/company/'+e[1]+'\')">'+e[0]+'</b>'+(i<EXAMPLES.length-1?' · ':'');}).join('');
   var allc=Object.assign({},companies,getAdminCompanies());
   var pop=Object.keys(allc).map(function(k){var c=allc[k];return '<button class="card card-pad card-hover" onclick="go(\'/company/'+c.slug+'\')" style="text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center"><span class="logo-sq" style="width:46px;height:46px;background:'+c.color+'">'+esc(c.logo)+companyLogoImg(c)+'</span><span><span style="display:block;font-weight:700">'+esc(c.name)+'</span><span style="font-size:12.5px;color:var(--muted)">'+esc(c.industry)+'</span></span></button>';}).join('');
@@ -3130,7 +3135,7 @@ function renderHome(){
    '<div class="search-wrap">'+searchBoxHTML('home-search')+'<div class="examples">Try:&nbsp;'+ex+'</div></div>'+
    '<div class="hero-stats"><div class="hero-stat"><div class="n">'+Object.keys(allc).length+'+</div><div class="l">Companies fully mapped</div></div><div class="hero-stat"><div class="n">10</div><div class="l">Dashboard sections</div></div><div class="hero-stat"><div class="n">∞</div><div class="l">Any company, instantly</div></div></div>'+
    '</div></section>'+
-   '<section class="container" style="padding:64px 24px 20px"><div class="center" style="margin-bottom:40px"><div class="eyebrow">One dashboard, everything you need</div><h2 style="font-size:32px;margin-top:10px">Built to make you interview-ready</h2><p class="muted" style="max-width:620px;margin:12px auto 0">Seven intelligence modules turn hours of scattered research into a single, structured prep dashboard.</p></div><div class="grid grid-3">'+feat+'</div></section>'+
+   '<section class="container" style="padding:36px 24px 16px"><div class="flex between items-center mb-16 wrap" style="gap:8px"><div><div class="eyebrow">One dashboard, everything you need</div><h2 style="font-size:22px;margin-top:6px;font-weight:800">Built to make you interview-ready</h2></div><span class="muted" style="font-size:13px">7 intel modules · one company search</span></div><div class="modules-grid">'+feat+'</div></section>'+
    '<section class="container" style="padding:48px 24px 70px"><div class="flex between items-center mb-24 wrap" style="gap:12px"><div><div class="eyebrow">Start here</div><h2 style="font-size:28px;margin-top:8px">Popular companies</h2></div><span class="muted" style="font-size:14px">Click any company to open its full dashboard →</span></div><div class="grid grid-4">'+pop+'</div></section>'+
    '<section class="container" style="padding-bottom:70px"><div class="card card-pad" style="background:var(--navy-grad);color:#fff;text-align:center;padding:48px"><h2 style="font-size:28px">Walk into your next interview prepared</h2><p style="color:#dbe2fe;max-width:560px;margin:12px auto 22px">Search any company above, or open a sample dashboard to see everything Placement Bible gives you.</p><button class="btn btn-light" onclick="go(\'/company/amazon\')">Open sample dashboard '+ico('arrow',18)+'</button></div></section>'+
    '</div>'+footer();
